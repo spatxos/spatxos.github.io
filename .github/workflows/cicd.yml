@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
+  publish&pull:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -34,10 +34,8 @@ jobs:
           hexo clean
           hexo deploy
           ls -la
+          pwd
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v2
       - name: Login to Aliyun Container Registry (ACR)
         uses: aliyun/acr-login@v1
@@ -51,6 +49,7 @@ jobs:
           ls -la
           cd ..
           ls -la
+          pwd
           docker build -t spatxos/spatxos-blog:latest -f Dockerfile .
       - name: Push Image
         run: |
