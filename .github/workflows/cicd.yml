@@ -47,6 +47,9 @@ jobs:
           password: "${{ secrets.DOCKER_PASSWORD }}"
       - name: Build Image
         run: |
+          ls -la
+          cd ..
+          ls -la
           docker build -t spatxos/spatxos-blog:latest -f Dockerfile .
       - name: Push Image
         run: |
