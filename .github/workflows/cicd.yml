@@ -38,12 +38,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Login to Aliyun Container Registry (ACR)
+        uses: aliyun/acr-login@v1
+        with:
+          login-server: registry.cn-hongkong.aliyuncs.com
+          region-id: cn-hongkong  # 3
+          username: "${{ secrets.DOCKER_USERNAME }}"
+          password: "${{ secrets.DOCKER_PASSWORD }}"
       - name: Build Image
         run: |
           docker build -t spatxos/spatxos-blog:latest -f Dockerfile .
-      - name: Login to Registry
-        repo: registry.cn-hongkong.aliyuncs.com
-        run: docker login --username=${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
       - name: Push Image
         run: |
           docker pull registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest
