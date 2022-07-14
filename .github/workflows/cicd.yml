@@ -61,23 +61,23 @@ jobs:
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
-        host: ${{ secrets.HOST }} # 服务器ip
-        username: ${{ secrets.HOST_USERNAME }} # 服务器登录用户名
-        password: ${{ secrets.HOST_PASSWORD }} # 服务器登录密码
-        port: ${{ secrets.HOST_PORT }} # 服务器ssh端口
-        script: |
-          docker info
-          echo $(docker ps -aqf "name=spatxos-blog")
-          docker stop $(docker ps -aqf "name=spatxos-blog")
-          docker container rm spatxos-blog
-          docker rmi spatxos-blog
-          echo 查看是否成功删除spatxos-blog
-          docker ps -a
-          echo 从harbor拉取docker镜像
-          docker pull registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest
-          docker tag registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest wangpengzong/spatxos-blog:latest
-          docker run -it --rm -d -p 80:80 -v /root/soft/docker:/root/soft/docker --name spatxos-blog wangpengzong/spatxos-blog
-          docker system prune -f
-          echo docker容器启动成功
+          host: ${{ secrets.HOST }} # 服务器ip
+          username: ${{ secrets.HOST_USERNAME }} # 服务器登录用户名
+          password: ${{ secrets.HOST_PASSWORD }} # 服务器登录密码
+          port: ${{ secrets.HOST_PORT }} # 服务器ssh端口
+          script: |
+            docker info
+            echo $(docker ps -aqf "name=spatxos-blog")
+            docker stop $(docker ps -aqf "name=spatxos-blog")
+            docker container rm spatxos-blog
+            docker rmi spatxos-blog
+            echo 查看是否成功删除spatxos-blog
+            docker ps -a
+            echo 从harbor拉取docker镜像
+            docker pull registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest
+            docker tag registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest wangpengzong/spatxos-blog:latest
+            docker run -it --rm -d -p 80:80 -v /root/soft/docker:/root/soft/docker --name spatxos-blog wangpengzong/spatxos-blog
+            docker system prune -f
+            echo docker容器启动成功
 
 
