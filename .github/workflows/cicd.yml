@@ -44,6 +44,8 @@ jobs:
           docker build -t spatxos/spatxos-blog:latest -f Dockerfile .
       - name: Push Image
         run: |
+          ls -la
+          pwd
           docker pull registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest
 
   # Docker 自动部署
