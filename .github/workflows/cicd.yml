@@ -41,9 +41,6 @@ jobs:
           hexo deploy
           ls -la
           pwd
-          cd spatxos-blog
-          ls -la
-          pwd
           docker build -t spatxos/spatxos-blog:latest -f Dockerfile .
       - name: Push Image
         run: |
