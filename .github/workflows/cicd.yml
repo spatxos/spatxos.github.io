@@ -28,14 +28,6 @@ jobs:
           npm install hexo-generator-feed --save
           npm i hexo-wordcount
           npm install
-
-      - name: Deploy
-        run: |
-          hexo clean
-          hexo deploy
-          ls -la
-          pwd
-
       - name: Login to Aliyun Container Registry (ACR)
         uses: aliyun/acr-login@v1
         with:
@@ -43,8 +35,12 @@ jobs:
           region-id: cn-hongkong  # 3
           username: "${{ secrets.DOCKER_USERNAME }}"
           password: "${{ secrets.DOCKER_PASSWORD }}"
-      - name: Build Image
+      - name: Deploy and Build Image
         run: |
+          hexo clean
+          hexo deploy
+          ls -la
+          pwd
           cd spatxos-blog
           ls -la
           pwd
