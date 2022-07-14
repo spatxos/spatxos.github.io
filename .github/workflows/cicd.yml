@@ -36,7 +36,6 @@ jobs:
           ls -la
           pwd
 
-      - uses: actions/checkout@v2
       - name: Login to Aliyun Container Registry (ACR)
         uses: aliyun/acr-login@v1
         with:
