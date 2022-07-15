@@ -12,11 +12,14 @@ import (
 	"strings"
 	"regexp"
 	"path"
+	"flag"
 )
-var cookie = ""
-
+var cookie string
+func init() {
+    flag.StringVar(&cookie,"cookie","","cnblog of cookie")
+}
 func main() {
-	fmt.Printf("\r\n cookie:%s \n", cookie)
+	flag.Parse()//暂停获取参数
 	if(len(cookie)>0){
 		fmt.Printf("开始执行")
 		getBlogList(1)
