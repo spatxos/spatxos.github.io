@@ -70,7 +70,7 @@ jobs:
       - name: Push Image
         run: |
           docker images
-          docker push ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
+          docker push registry.cn-hongkong.aliyuncs.com/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
 
   # Docker 自动部署
   deploy-docker: 
