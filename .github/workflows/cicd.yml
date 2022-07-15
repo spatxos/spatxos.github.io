@@ -67,8 +67,9 @@ jobs:
           ls -la
           pwd
           docker build -t "${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}" -f Dockerfile .
+      - name: Push Image
+        run: |
           docker images
-          cat /root/.docker/config.json
           docker push "${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}"
 
   # Docker 自动部署
