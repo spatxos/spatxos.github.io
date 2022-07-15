@@ -11,7 +11,7 @@ jobs:
   PullBlogs:
     env:
       CNBLOGS_ISDOWN: ${{secrets.CNBLOGS_ISDOWN}}
-      CNBLOGS_COOKIE: ${{ secrets.CNBLOGS_COOKIE }}
+      CNBLOGS_COOKIE: ${{secrets.CNBLOGS_COOKIE}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -27,7 +27,7 @@ jobs:
       - name: Pull blogs from cnblogs
         if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
         run: |
-          go run source/_posts/downmyblogs.go -cookie ${{ env.CNBLOGS_COOKIE }}
+          go run source/_posts/downmyblogs.go -cookie ${{secrets.CNBLOGS_COOKIE}}
           ls -la
   build:
     needs: [PullBlogs]
