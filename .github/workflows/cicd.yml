@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  PullBlogs:
+  build:
     env:
       CNBLOGS_ISDOWN: ${{secrets.CNBLOGS_ISDOWN}}
       CNBLOGS_COOKIE: ${{secrets.CNBLOGS_COOKIE}}
@@ -18,6 +18,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.15.0'
+
       - name: Set up Go 1.18.3
         if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
         uses: actions/setup-go@v1
@@ -32,25 +38,6 @@ jobs:
           echo ${{env.CNBLOGS_COOKIE}} |wc -L
           go run downmyblogs.go -cookie ${{env.CNBLOGS_COOKIE}}
           ls -la
-  build:
-    needs: [PullBlogs]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v2
-        with:
-          ref: master
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16.15.0'
-
-      - name: Set up Go 1.18.3
-        uses: actions/setup-go@v1
-        with:
-          go-version: 1.18.3
-        id: go
 
       - name: Setup Hexo
         run: |
@@ -72,12 +59,12 @@ jobs:
           hexo deploy
           ls -la
           pwd
-          docker build -t spatxos/spatxos-blog:latest -f Dockerfile .
+          docker build -t ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest -f Dockerfile .
       - name: Push Image
         run: |
           ls -la
           pwd
-          docker pull registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest
+          docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
 
   # Docker 自动部署
   deploy-docker: 
@@ -94,16 +81,16 @@ jobs:
           port: ${{ secrets.HOST_PORT }} # 服务器ssh端口
           script: |
             docker info
-            echo $(docker ps -aqf "name=spatxos-blog")
-            docker stop $(docker ps -aqf "name=spatxos-blog")
-            docker container rm spatxos-blog
-            docker rmi spatxos-blog
-            echo 查看是否成功删除spatxos-blog
+            echo $(docker ps -aqf "name=${{secrets.BLOG_NAME}}-blog")
+            docker stop $(docker ps -aqf "name=${{secrets.BLOG_NAME}}-blog")
+            docker container rm ${{secrets.BLOG_NAME}}-blog
+            docker rmi ${{secrets.BLOG_NAME}}-blog
+            echo 查看是否成功删除${{secrets.BLOG_NAME}}-blog
             docker ps -a
             echo 从harbor拉取docker镜像
-            docker pull registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest
-            docker tag registry.cn-hongkong.aliyuncs.com/spatxos/spatxos-blog:latest wangpengzong/spatxos-blog:latest
-            docker run -it --rm -d -p 80:80 -v /root/soft/docker:/root/soft/docker --name spatxos-blog wangpengzong/spatxos-blog
+            docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
+            docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
+            docker run -it --rm -d -p 80:80 -v /root/${{secrets.BLOG_NAME}}-blog/html:/usr/share/nginx/html --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
             docker system prune -f
             echo docker容器启动成功
 

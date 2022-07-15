@@ -82,7 +82,6 @@ func getBlogList(pageindex int){
 				downloadImage(imgurl,strconv.Itoa(jsconf.BlogPost.Id),fileName)
 				articleBody = strings.Replace(articleBody, imgurl, fmt.Sprintf("/cnblogs/%s/%s",strconv.Itoa(jsconf.BlogPost.Id),fileName), -1)
 			}
-			fmt.Printf("articleBody:%s \n", articleBody)
 
 			downloadFile(strings.NewReader(articleBody), strconv.Itoa(jsconf.BlogPost.Id), fmt.Sprintf("%s.md",  strconv.Itoa(jsconf.BlogPost.Id)))
 		}
