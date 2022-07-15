@@ -3,7 +3,7 @@ name: Build Docker Image
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "v*.*.*"  # 后面每次更新提交，只有打上tag之后才会进行发布更新，减少actions执行次数
   workflow_dispatch:
 
 jobs:
@@ -33,10 +33,7 @@ jobs:
         if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
         run: |
           cd source/_posts/
-          echo $env.CNBLOGS_COOKIE |wc -L
-          echo ${{env.CNBLOGS_COOKIE}} |wc -L
           go run downmyblogs.go -cookie ${{env.CNBLOGS_COOKIE}}
-          ls -la
 
       - name: Setup Hexo
         run: |
@@ -64,8 +61,6 @@ jobs:
         run: |
           hexo clean
           hexo deploy
-          ls -la
-          pwd
           docker build -t "${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}" -f Dockerfile .
       - name: Push Image
         run: |
