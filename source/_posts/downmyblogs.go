@@ -20,7 +20,7 @@ func main() {
 		fmt.Printf("开始执行")
 		getBlogList(1)
 	}else{
-		fmt.Printf("未输出正确的CNBLOGS_COOKIE，请到github项目/Settings/Secrets/Actions下通过New repository secret添加一个CNBLOGS_COOKIE并填入正确的cookie值")
+		fmt.Printf("未输入正确的CNBLOGS_COOKIE，请到github项目/Settings/Secrets/Actions下通过New repository secret添加一个CNBLOGS_COOKIE并填入正确的cookie值")
 	}
 }
 func geturl(pageno int) string{
