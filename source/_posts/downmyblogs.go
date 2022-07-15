@@ -52,7 +52,6 @@ func getBlogList(pageindex int){
 	for _, childval := range conf.PostList {
 		if(childval.IsPublished){
 			childbody := getData(fmt.Sprintf("https://i.cnblogs.com/api/posts/%s", strconv.Itoa(childval.Id)))
-			fmt.Printf("childbody:%s \n", childbody)
 			var jsconf blogbodyConf
 			err := json.Unmarshal(childbody, &jsconf)
 			if err != nil {
