@@ -71,7 +71,7 @@ jobs:
         run: |
           ls -la
           pwd
-          docker push ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
+          docker push ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
 
   # Docker 自动部署
   deploy-docker: 
