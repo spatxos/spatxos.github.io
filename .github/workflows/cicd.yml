@@ -69,18 +69,6 @@ jobs:
           docker build -t ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} -f Dockerfile .
       - name: Push Image
         run: |
-          cd /etc/docker/ && sudo cat << EOF > daemon.json
-          {
-            "registry-mirrors": [
-              "https://registry.docker-cn.com",
-              "http://hub-mirror.c.163.com",
-              "${{secrets.DOCKER_REGISTRY}}",
-              "https://docker.mirrors.ustc.edu.cn"
-            ]
-          }
-          EOF
-          systemctl daemon-reload
-          systemctl restart docker
           docker images
           docker push ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
 
