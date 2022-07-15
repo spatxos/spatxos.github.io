@@ -13,11 +13,15 @@ import (
 	"regexp"
 	"path"
 )
-const cookie = "xxxxxxxxxxxxxw"
+var cookie = ""
 
 func main() {
-    fmt.Printf("开始执行")
-	getBlogList(1)
+	if(len(cookie)>0){
+		fmt.Printf("开始执行")
+		getBlogList(1)
+	}else{
+		fmt.Printf("未输出正确的CNBLOGS_COOKIE，请到github项目/Settings/Secrets/Actions下通过New repository secret添加一个CNBLOGS_COOKIE并填入正确的cookie值")
+	}
 }
 func geturl(pageno int) string{
     return fmt.Sprintf("https://i.cnblogs.com/api/posts/list?p=%s&cid=&tid=&t=1&cfg=0&search=&orderBy=&s=&scid=",strconv.Itoa(pageno))
