@@ -66,11 +66,14 @@ jobs:
           hexo deploy
           ls -la
           pwd
-          docker build -t ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest -f Dockerfile .
+          docker build \
+              --tag "${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}" \
+              --tag "${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}" \
+              "${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog" -f Dockerfile .
       - name: Push Image
         run: |
           docker images
-          docker push registry.cn-hongkong.aliyuncs.com/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
+          docker push "${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}"
 
   # Docker 自动部署
   deploy-docker: 
@@ -103,8 +106,8 @@ jobs:
             docker ps -a
             echo 从harbor拉取docker镜像
             chmod 777 /root/${{secrets.BLOG_NAME}}-blog/html/
-            docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
-            docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
+            docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
+            docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
             docker run -it --rm -d -p 80:80 --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
             docker cp ${{secrets.BLOG_NAME}}-blog:/usr/share/nginx/html /root/${{secrets.BLOG_NAME}}-blog/html
             docker system prune -f
