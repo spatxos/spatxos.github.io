@@ -9,6 +9,8 @@ on:
 
 jobs:
   PullBlogs:
+    env:
+      CNBLOGS_ISDOWN: ${{secrets.CNBLOGS_ISDOWN}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -16,13 +18,13 @@ jobs:
         with:
           ref: master
       - name: Set up Go 1.18.3
-        if: ${{ secrets.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
         uses: actions/setup-go@v1
         with:
           go-version: 1.18.3
         id: go
       - name: Pull blogs from cnblogs
-        if: ${{ secrets.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
         run: |
           cd source/_posts/
           go run -ldflags="-X main.cookie ${{ secrets.CNBLOGS_COOKIE }}" downmyblogs.go
