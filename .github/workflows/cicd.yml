@@ -94,14 +94,14 @@ jobs:
             docker stop $(docker ps -aqf "name=${{secrets.BLOG_NAME}}-blog")
             docker container rm ${{secrets.BLOG_NAME}}-blog
             docker rmi ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
-            docker rmi ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
             echo 查看是否成功删除${{secrets.BLOG_NAME}}-blog
             docker ps -a
             echo 从harbor拉取docker镜像
             chmod 777 /root/${{secrets.BLOG_NAME}}-blog/html/
             docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
             docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
-            docker run -it --rm -d -p 80:80 --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
+            docker run -it --rm -d -p 80:80 --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
+            docker image rm `docker images -q --filter reference=${{secrets.DOCKER_REGISTRY}}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog*:*`
             docker cp ${{secrets.BLOG_NAME}}-blog:/usr/share/nginx/html /root/${{secrets.BLOG_NAME}}-blog/html
             docker system prune -f
             echo docker容器启动成功
