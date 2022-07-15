@@ -12,7 +12,7 @@ npm install -g hexo
 cd ~/
 hexo init my-blog
 cd my-blog
-npm install
+npm install 
 ```
 2. 安装hexo admin并运行
 ```
