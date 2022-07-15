@@ -47,7 +47,7 @@ func getBlogList(pageindex int){
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-
+ 
 	fmt.Printf("\r\n PageIndex:%s，PageSize:%s，PostsCount:%s \n", strconv.Itoa(conf.PageIndex), strconv.Itoa(conf.PageSize), strconv.Itoa(conf.PostsCount))
 	for _, childval := range conf.PostList {
 		if(childval.IsPublished){
