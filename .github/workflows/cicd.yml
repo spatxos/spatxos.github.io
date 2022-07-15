@@ -2,9 +2,8 @@ name: Build Docker Image
 
 on:
   push:
-    branches:
-      - main
-      - master
+    tags:
+      - "v*.*.*"
   workflow_dispatch:
 
 jobs:
@@ -46,6 +45,14 @@ jobs:
           npm install hexo-generator-feed --save
           npm i hexo-wordcount
           npm install
+      # get image tag name
+      - name: Get Image Tag Name
+        run: |
+          if [ x${{ github.event.inputs.tag }} == x"" ]; then
+            echo "TAG_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          else
+            echo "TAG_NAME=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          fi
       - name: Login to Aliyun Container Registry (ACR)
         uses: aliyun/acr-login@v1
         with:
@@ -59,12 +66,12 @@ jobs:
           hexo deploy
           ls -la
           pwd
-          docker build -t ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest -f Dockerfile .
+          docker build -t ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} -f Dockerfile .
       - name: Push Image
         run: |
           ls -la
           pwd
-          docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
+          docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
 
   # Docker 自动部署
   deploy-docker: 
@@ -72,6 +79,14 @@ jobs:
     name: Deploy Docker
     runs-on: ubuntu-latest
     steps:
+      # get image tag name
+      - name: Get Image Tag Name
+        run: |
+          if [ x${{ github.event.inputs.tag }} == x"" ]; then
+            echo "TAG_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          else
+            echo "TAG_NAME=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          fi
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
@@ -89,8 +104,8 @@ jobs:
             docker ps -a
             echo 从harbor拉取docker镜像
             chmod 777 /root/${{secrets.BLOG_NAME}}-blog/html/
-            docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
-            docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
+            docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
+            docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
             docker run -it --rm -d -p 80:80 --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
             docker cp ${{secrets.BLOG_NAME}}-blog:/usr/share/nginx/html /root/${{secrets.BLOG_NAME}}-blog/html
             docker system prune -f

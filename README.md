@@ -51,6 +51,7 @@
 |   DOCKER_REGISTRY_REGION   |  docker registry region id    |  docker仓库区域id    |  cn-hongkong    |
 |   CNBLOGS_ISDOWN   |  Whether to pull blogs from cnblogs    |  本次执行是否从cnblogs拉取博客    |  true或false   |
 |   CNBLOGS_COOKIE   |  cnblogs of cookie    |  cnblogs的cookie    |  __gads=ID=bbfxxxxxxxxxx    |
+|   BLOG_NAME   |  blog of name    |  博客的名称，发布到docker或者服务器上创建的文件夹都将使用这个    |  spatxos    |
   ### 3.   在`/.github/workflows/`下添加一个yml文件，可以进行自定义
   我写好了一个yml，是将hexo发布到阿里云的docker仓库，然后进行服务器部署，后期将会添加发布到github pages的yml
   ```
@@ -133,4 +134,6 @@ jobs:
 # 另一种办法，直接fork
   现在我已经把仓库创建好并且上传到了github，仓库地址[https://github.com/spatxos/spatxos-blog](https://github.com/spatxos/spatxos-blog)，可以直接进行fork，然后去[阿里云容器仓库](https://cr.console.aliyun.com/cn-hongkong/instances)中创建一个个人实例，购买或者使用一个云服务器，在github仓库中填写一下<a id="#Anchortable">Secrets表格</a>中Secrets即可
 
-# 从博客园拉取自己的
+# 从博客园拉取之间创建的博客到新建的hexo
+  在Secrets表格中设置好`CNBLOGS_ISDOWN`是`true`，然后去登陆博客园，F12，随便找一个xhr类型的请求，查找对应的cookie，然后到`/source/_posts`下执行一下`go run convertcnblogbookie.go -cookie "替换成你的cookie"`将会获得一个输出的新cookie，将新的cookie作为`CNBLOGS_COOKIE`的value写入进去（github action中使用secrets时，不能包含某些特殊字符，否则会被截断，所以这次执行其实是对特殊字符的替换，后面拉取博客时再替换回来）
+  在每次执行提交时，将会把docker里面的hexo静态页面映射到服务器的`/root/${{BLOG_NAME}}-blog/html`文件夹下，首次拉取博客园的文章之后，如何博客园文章未进行更新，我们可以更改一下`CNBLOGS_ISDOWN`为`false`，那么就不会从博客园拉取了，原本的文件还会存在，不会进行覆盖
