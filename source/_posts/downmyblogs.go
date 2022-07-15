@@ -16,6 +16,7 @@ import (
 var cookie = ""
 
 func main() {
+	fmt.Printf("\r\n cookie:%s \n", cookie)
 	if(len(cookie)>0){
 		fmt.Printf("开始执行")
 		getBlogList(1)
