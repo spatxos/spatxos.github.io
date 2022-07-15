@@ -20,6 +20,11 @@ func init() {
 }
 func main() {
 	flag.Parse()//暂停获取参数
+	cookie := strings.Replace(cookie,"_semicolon_",";",-1)
+	cookie = strings.Replace(cookie,"_vertical_","|",-1)
+	cookie = strings.Replace(cookie,"_frontbracket_","(",-1)
+	cookie = strings.Replace(cookie,"_backbracket_",")",-1)
+	cookie = strings.Replace(cookie,"_space_"," ",-1)
     println(cookie)
 	if(len(cookie)>0){
 		fmt.Printf("开始执行")
