@@ -718,7 +718,7 @@ site_footer:
   copyright: 'Copyright © 2022 - 2022 <a href="https://github.com/wangpengzong">wangpengzong</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
   custom: # 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
      - label: '<br>'
-     - label: '[浙ICP备2021021999号]'
+     - label: '[浙ICP备2021021999号](https://beian.miit.gov.cn)'
   
 # tag标签 按钮，文本高亮等等..
 tag_plugins:
