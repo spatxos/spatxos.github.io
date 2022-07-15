@@ -20,7 +20,7 @@ func init() {
 }
 func main() {
 	flag.Parse()//暂停获取参数
-	cookie := strings.Replace(cookie,"_semicolon_",";",-1)
+	cookie = strings.Replace(cookie,"_semicolon_",";",-1)
 	cookie = strings.Replace(cookie,"_vertical_","|",-1)
 	cookie = strings.Replace(cookie,"_frontbracket_","(",-1)
 	cookie = strings.Replace(cookie,"_backbracket_",")",-1)
