@@ -20,6 +20,7 @@ func init() {
 }
 func main() {
 	flag.Parse()//暂停获取参数
+    println(cookie)
 	if(len(cookie)>0){
 		fmt.Printf("开始执行")
 		getBlogList(1)
