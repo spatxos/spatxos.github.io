@@ -66,10 +66,7 @@ jobs:
           hexo deploy
           ls -la
           pwd
-          docker build \
-              --tag "${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}" \
-              --tag "${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}" \
-              "${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog" -f Dockerfile .
+          docker build -t "${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}" -f Dockerfile .
       - name: Push Image
         run: |
           docker images
