@@ -6,6 +6,12 @@ on:
       - main
       - master
   workflow_dispatch:
+  tags:
+    - 'v*'
+    - "*.*.*"
+    - "!*.*.*-beta*"
+    - "!*.*.*-rc*"
+    -
 
 jobs:
   build:
@@ -88,9 +94,11 @@ jobs:
             echo 查看是否成功删除${{secrets.BLOG_NAME}}-blog
             docker ps -a
             echo 从harbor拉取docker镜像
+            chmod 777 /root/${{secrets.BLOG_NAME}}-blog/html/
             docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
             docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:latest
-            docker run -it --rm -d -p 80:80 -v /root/${{secrets.BLOG_NAME}}-blog/html:/usr/share/nginx/html --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
+            docker run -it --rm -d -p 80:80 --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
+            docker cp ${{secrets.BLOG_NAME}}-blog:/root/${{secrets.BLOG_NAME}}-blog/html:/usr/share/nginx/html
             docker system prune -f
             echo docker容器启动成功
 
