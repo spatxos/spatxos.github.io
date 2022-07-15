@@ -100,7 +100,8 @@ jobs:
             echo 从harbor拉取docker镜像
             chmod 777 /root/${{secrets.BLOG_NAME}}-blog/html/
             docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
-            docker run -it --rm -d -p 80:80 --name ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
+            docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
+            docker run -it --rm -d -p 80:80 --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
             docker cp ${{secrets.BLOG_NAME}}-blog:/usr/share/nginx/html /root/${{secrets.BLOG_NAME}}-blog/html
             docker system prune -f
             echo docker容器启动成功
