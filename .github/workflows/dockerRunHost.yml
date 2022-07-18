@@ -3,6 +3,7 @@ name: Build Docker Image
 on:
   push:
     tags:
+      - "docker-v*.*.*"  # 后面每次更新提交，只有打上tag之后才会进行发布更新，减少actions执行次数
       - "v*.*.*"  # 后面每次更新提交，只有打上tag之后才会进行发布更新，减少actions执行次数
   workflow_dispatch:
 

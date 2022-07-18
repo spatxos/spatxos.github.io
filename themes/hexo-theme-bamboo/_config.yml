@@ -56,7 +56,7 @@ sidebar:
       avatar: https://avatars.githubusercontent.com/u/29770198?s=400&u=6808657eac5be8fc769cd9db07d6cb6923d303be&v=4
       shape: rectangle # circle, rectangle
       url: /about/
-      title: 秋名山上修车
+      title: 秋名山修车
       subtitle: 等下我，我先躺一会儿
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Long Cang,cursive
@@ -188,12 +188,12 @@ swiper:
   defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
   defaultVideo: 'https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
-  defaultTile: '秋名山上修车' # 标题
+  defaultTile: '秋名山修车' # 标题
   defaultDesc: ['ball ball u make a people bar.'] #描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
-  defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
-  defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接 
-  defaultRightBtnText: '下载主题' # 右边按钮的文字，空字符串则不显示
-  defaultRightBtnLink: 'https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip' # 右边的按钮的链接
+  # defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
+  # defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接 
+  # defaultRightBtnText: '下载主题' # 右边按钮的文字，空字符串则不显示
+  # defaultRightBtnLink: 'https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip' # 右边的按钮的链接
   defaultDescTyped: true # defaultDesc文字是否开启打字特效  is typed
   defaultDescTypedSpeed: 100 # defaultDesc 打字速度, typed typeSpeed
   defaultDescTypedBackSpeed: 50 # defaultDesc 打字返回速度 typed backSpeed
@@ -274,7 +274,7 @@ ribbon:
 # live-2d(左下角动画人物)
 live2d:
   on: true  # 控制显示或者隐藏
-  modelId: 6 # 0 or 1 or 2 or 3 or 4 or 5 or 6
+  modelId: 5 # 0 or 1 or 2 or 3 or 4 or 5 or 6
   open: true # 默认展开，false则收缩，通过点左下角的方块点击，控制展开或者收缩
 
 # 首页雪花飘落效果--冬天
@@ -515,7 +515,7 @@ changyan:
 
 # gitalk评论
 gitalk:
-  on: true         # 用来做启用判断可以不用
+  on: false         # 用来做启用判断可以不用
   clientID: '130acbddd767ea786fbd' # clientID 
   clientSecret: '0d745043f8d258ef315a966022de0038b28e5c4c' # clientSecret
   owner: 'spatxos'  #Github 用户名,
