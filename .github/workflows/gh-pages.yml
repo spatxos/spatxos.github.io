@@ -1,4 +1,4 @@
-name: Build Docker Image
+name: Build gh-pages
 
 on:
   push:
