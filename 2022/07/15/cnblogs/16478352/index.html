@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>使用github action发布hexo博客到云服务器 | spatxos</title>
+  <title>使用github action发布hexo博客到云服务器 | 秋名山修车</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -20,7 +20,7 @@
   
   
     <script>
-        var themeModelId = '6';
+        var themeModelId = '5';
         if (themeModelId) {
             localStorage.setItem('modelId', themeModelId);
         }
@@ -81,7 +81,7 @@
         
     
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="spatxos" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="秋名山修车" type="application/atom+xml">
 </head>
 
   
@@ -231,7 +231,7 @@
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
       <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
-      <h3 class="drawer-box-head_title">spatxos</h3>
+      <h3 class="drawer-box-head_title">秋名山修车</h3>
       <h5 class="drawer-box-head_desc">spatxos</h5>
     </div>
     
@@ -422,7 +422,7 @@
           <img src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="logo">
         </div>
       
-      <a href="/" class="logo">spatxos</a>
+      <a href="/" class="logo">秋名山修车</a>
     </div>
     <nav class="navbar">
       <ul class="menu">
@@ -870,7 +870,7 @@ jobs:
 <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h3 id="1-阿里云登陆和docker-push-时tag错误，问题描述参见docker-tag-error，解决办法参见GitHub-Actions持续集成阿里云容器镜像服务（ACR），我后面这么写的"><a href="#1-阿里云登陆和docker-push-时tag错误，问题描述参见docker-tag-error，解决办法参见GitHub-Actions持续集成阿里云容器镜像服务（ACR），我后面这么写的" class="headerlink" title="1.阿里云登陆和docker push 时tag错误，问题描述参见docker tag error，解决办法参见GitHub Actions持续集成阿里云容器镜像服务（ACR），我后面这么写的"></a>1.阿里云登陆和docker push 时tag错误，问题描述参见<a target="_blank" rel="noopener" href="https://github.com/actions/starter-workflows/issues/1635">docker tag error</a>，解决办法参见<a target="_blank" rel="noopener" href="https://mincong.io/cn/github-actions-acr/">GitHub Actions持续集成阿里云容器镜像服务（ACR）</a>，我后面这么写的</h3><p>  <code>docker build -t &quot;$&#123;&#123; secrets.DOCKER_REGISTRY &#125;&#125;/$&#123;&#123;secrets.BLOG_NAME&#125;&#125;/$&#123;&#123;secrets.BLOG_NAME&#125;&#125;-blog:$&#123;&#123;env.TAG_NAME&#125;&#125;&quot; -f Dockerfile .</code></p>
 <h3 id="2-go传入参数和secrets截断问题"><a href="#2-go传入参数和secrets截断问题" class="headerlink" title="2.go传入参数和secrets截断问题"></a>2.go传入参数和secrets截断问题</h3><pre><code>  go传入参数使用conf来做，secrets截断问题通过先替换掉会截断的字符，然后使用时替换回去
 </code></pre>
-<h1 id="博客github地址"><a href="#博客github地址" class="headerlink" title="博客github地址"></a><a target="_blank" rel="noopener" href="https://github.com/spatxos/spatxos-blog">博客github地址</a></h1>
+<h1 id="博客github地址"><a href="#博客github地址" class="headerlink" title="博客github地址"></a><a target="_blank" rel="noopener" href="https://github.com/spatxos/spatxos.github.io">博客github地址</a></h1>
       </div>
       <div class="post-tags-categories">
         
@@ -1054,20 +1054,6 @@ jobs:
     <!-- 评论 -->
 
   <div id="myComment">
-    
-      <link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css">
-<div id="gitalk-container"></div>
-
-<style>
-    .gt-container .gt-meta {
-        z-index: 2;
-    }
-    .gt-container .gt-header-comment {
-        width:100%;
-        box-sizing: border-box;
-        margin-left: 0;
-    }
-</style>
     
   </div>
 
@@ -1956,29 +1942,6 @@ jobs:
 
 <!-- 评论所需js -->
 
-  
-    <script src="https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-  comment_el = '#gitalk-container';
-  load_gitalk = function () {
-    if ($(comment_el).length) {
-      var gitalk = new Gitalk({
-        clientID: '130acbddd767ea786fbd',
-        clientSecret: '0d745043f8d258ef315a966022de0038b28e5c4c',
-        id: window.location.pathname,
-        repo: 'gitalk-comments',
-        owner: 'spatxos',
-        admin: ['spatxos'],
-        proxy: 'http://pigass.cn/proxy/https://github.com/login/oauth/access_token'
-      })
-      gitalk.render('gitalk-container')
-    }
-  }
-  $(document).ready(load_gitalk);
-  document.addEventListener('pjax:complete', function () {
-    load_gitalk();
-  });
-</script>
   
 
 
