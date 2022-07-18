@@ -46,21 +46,10 @@ jobs:
         run: |
           hexo clean
           hexo deploy
-
-  # Docker 自动部署
-  deploy-gh-pages: 
-    needs: [build]
-    name: deploy gh pages
-    # 将构建产物 commit 到一个分支上，用于发布静态站点资源
-    # https://github.com/peaceiris/actions-gh-pages
-    uses: peaceiris/actions-gh-pages@v3
-    steps:
-      # Github 会在 workflow 中自动生成 GIHUBT_TOKEN，用于认证 workflow 的运行
-      github_token: ${{ secrets.GITHUB_TOKEN }}
-      # 静态资源目录设置
-      publish_dir: ./public
-      # 默认发布到 gh-pages 分支上，可以指定特定的发布分支（不能选拉取代码的分支）
-      publish_branch: gh-pages
-      full_commit_message: ${{ github.event.head_commit.message }}
+          ls -la
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public # The folder the action should deploy.
 
 
