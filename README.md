@@ -67,4 +67,4 @@
   ### 2.go传入参数和secrets截断问题
       go传入参数使用conf来做，secrets截断问题通过先替换掉会截断的字符，然后使用时替换回去
 
-# [博客github地址](https://github.com/spatxos/spatxos-blog)
+# [博客github地址](https://github.com/spatxos/spatxos.github.io)

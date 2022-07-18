@@ -1,0 +1,66 @@
+name: Build Docker Image
+
+on:
+  push:
+    tags:
+      - "gh-v*.*.*"  # 后面每次更新提交，只有打上tag之后才会进行发布更新，减少actions执行次数
+  workflow_dispatch:
+
+jobs:
+  build:
+    env:
+      CNBLOGS_ISDOWN: ${{secrets.CNBLOGS_ISDOWN}}
+      CNBLOGS_COOKIE: ${{secrets.CNBLOGS_COOKIE}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.15.0'
+
+      - name: Set up Go 1.18.3
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.18.3
+        id: go
+      - name: Pull blogs from cnblogs
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        run: |
+          cd source/_posts/
+          go run downmyblogs.go -cookie ${{env.CNBLOGS_COOKIE}}
+
+      - name: Setup Hexo
+        run: |
+          npm install hexo-cli -g
+          npm install hexo-generator-search --save
+          npm install hexo-generator-feed --save
+          npm i hexo-wordcount
+          npm install
+      - name: Deploy and Build Image
+        run: |
+          hexo clean
+          hexo deploy
+
+  # Docker 自动部署
+  deploy-gh-pages: 
+    needs: [build]
+    name: deploy gh pages
+    # 将构建产物 commit 到一个分支上，用于发布静态站点资源
+    # https://github.com/peaceiris/actions-gh-pages
+    uses: peaceiris/actions-gh-pages@v3
+    steps:
+      # Github 会在 workflow 中自动生成 GIHUBT_TOKEN，用于认证 workflow 的运行
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      # 静态资源目录设置
+      publish_dir: ./public
+      # 默认发布到 gh-pages 分支上，可以指定特定的发布分支（不能选拉取代码的分支）
+      publish_branch: gh-pages
+      full_commit_message: ${{ github.event.head_commit.message }}
+
+
