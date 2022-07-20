@@ -1398,6 +1398,7 @@
 <!-- github的UV PV统计 -->
 
   <script src="https://pv.sohu.com/cityjson"></script>
+  <script id="ipcn" src="https://ip.cn/api/index?ip=&type=0"></script>
 
   <script data-pjax>
     var _ggg = window.atob('Z2hwX2dKOVV0S0l3QW10eExxQmVjeWZzNmdYdW1PbWZIcDBWb0NDNw==');
@@ -1408,7 +1409,9 @@
     var sohucityjson = $.parseJSON(getCookie('sohucityjson'));
     if(sohucityjson == undefined || sohucityjson.length <= 0){
       sohucityjson = returnCitySN;
-      setCookie('sohucityjson', JSON.stringify(returnCitySN),1);
+      if(returnCitySN.indexOf("cip")>-1){
+        setCookie('sohucityjson', JSON.stringify(returnCitySN),1);
+      }
     }
     //console.log("ip",sohucityjson)
     var current_uv_issue_number = getCookie('current_uv_issue_number');

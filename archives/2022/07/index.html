@@ -737,40 +737,6 @@
           <li class="post-item" data-aos="fade-left">
             
             <div class="post-img-box">
-              <a href="/2022/07/15/cnblogs/16478352/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/6.jpg" class="lazyload placeholder" data-srcset="/medias/6.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-15</span>
-              </div>
-              <a class="post-title" href="/2022/07/15/cnblogs/16478352/">使用github action发布hexo博客到云服务器</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2022/07/10/cnblogs/16463506/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/medias/13.jpg" class="lazyload placeholder" data-srcset="/medias/13.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-10</span>
-              </div>
-              <a class="post-title" href="/2022/07/10/cnblogs/16463506/">用go把博客园博客下载到本地Hexo目录下</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
               <a href="/2022/07/07/shi-yong-hexo-admin-xie-bo-ke/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" src="/medias/9.jpg" class="lazyload placeholder" data-srcset="/medias/9.jpg" srcset="https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg" alt="">
@@ -1478,6 +1444,7 @@
 <!-- github的UV PV统计 -->
 
   <script src="https://pv.sohu.com/cityjson"></script>
+  <script id="ipcn" src="https://ip.cn/api/index?ip=&type=0"></script>
 
   <script data-pjax>
     var _ggg = window.atob('Z2hwX2dKOVV0S0l3QW10eExxQmVjeWZzNmdYdW1PbWZIcDBWb0NDNw==');
@@ -1488,7 +1455,9 @@
     var sohucityjson = $.parseJSON(getCookie('sohucityjson'));
     if(sohucityjson == undefined || sohucityjson.length <= 0){
       sohucityjson = returnCitySN;
-      setCookie('sohucityjson', JSON.stringify(returnCitySN),1);
+      if(returnCitySN.indexOf("cip")>-1){
+        setCookie('sohucityjson', JSON.stringify(returnCitySN),1);
+      }
     }
     //console.log("ip",sohucityjson)
     var current_uv_issue_number = getCookie('current_uv_issue_number');
