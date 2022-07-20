@@ -1628,7 +1628,7 @@ npm install
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Jul 20 2022 04:56:50 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Wed Jul 20 2022 05:02:10 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-07-20 日</div>
           
         </div>
@@ -2394,7 +2394,8 @@ npm install
     var github_repo = 'spatxos.github.io';
     var isgituv_debug = 'false' === 'true';
     var git_url = 'https://api.github.com/repos/'+github_name+"/"+github_repo;
-    var sohucityjson = $.parseJSON(getCookie('sohucityjson'));
+    var sohucityjsonstr = getCookie('sohucityjson');
+    var sohucityjson = sohucityjsonstr.length>0? $.parseJSON(getCookie('sohucityjson')):'';
     if(sohucityjson == undefined || sohucityjson.length <= 0){
       sohucityjson = returnCitySN;
       if(returnCitySN.indexOf("cip")>-1){

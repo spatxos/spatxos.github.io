@@ -1413,7 +1413,8 @@
     var github_repo = 'spatxos.github.io';
     var isgituv_debug = 'false' === 'true';
     var git_url = 'https://api.github.com/repos/'+github_name+"/"+github_repo;
-    var sohucityjson = $.parseJSON(getCookie('sohucityjson'));
+    var sohucityjsonstr = getCookie('sohucityjson');
+    var sohucityjson = sohucityjsonstr.length>0? $.parseJSON(getCookie('sohucityjson')):'';
     if(sohucityjson == undefined || sohucityjson.length <= 0){
       sohucityjson = returnCitySN;
       if(returnCitySN.indexOf("cip")>-1){
