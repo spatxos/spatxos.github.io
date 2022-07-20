@@ -2276,7 +2276,7 @@ static v
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Jul 20 2022 05:49:33 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Wed Jul 20 2022 06:14:37 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-07-20 日</div>
           
         </div>
@@ -3104,7 +3104,7 @@ static v
             'Accept': 'application/vnd.github+json',
             'Authorization': 'token '+_ggg,
           },
-          body: "{\"title\":\""+sohucityjson.cip+"\",\"body\":\"Add a UV record,IP:"+sohucityjson.cip+"\",\"labels\":[\"UV\"]}"
+          body: "{\"title\":\""+sohucityjson.cip+"\",\"body\":\"Add a UV record,IP:"+sohucityjson.cip+"，区域:"+sohucityjson.cname+"\",\"labels\":[\"UV\"]}"
         })
         .then(data => data.json()).then(data => {
               //console.log("createIssue",data)

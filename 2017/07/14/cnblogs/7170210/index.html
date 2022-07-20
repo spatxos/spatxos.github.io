@@ -1947,7 +1947,7 @@
             'Accept': 'application/vnd.github+json',
             'Authorization': 'token '+_ggg,
           },
-          body: "{\"title\":\""+sohucityjson.cip+"\",\"body\":\"Add a UV record,IP:"+sohucityjson.cip+"\",\"labels\":[\"UV\"]}"
+          body: "{\"title\":\""+sohucityjson.cip+"\",\"body\":\"Add a UV record,IP:"+sohucityjson.cip+"，区域:"+sohucityjson.cname+"\",\"labels\":[\"UV\"]}"
         })
         .then(data => data.json()).then(data => {
               //console.log("createIssue",data)
