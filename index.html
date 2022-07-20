@@ -2276,7 +2276,7 @@ static v
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Jul 20 2022 06:14:37 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Wed Jul 20 2022 07:18:45 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-07-20 日</div>
           
         </div>
@@ -3065,14 +3065,20 @@ static v
             var count_uv = 0;
             var count_pv = 0;
             if(sohucityjson!=undefined){
+              var getnumber = 0;
               list.map((data)=>{
                 count_uv ++;
                 count_pv = count_pv + data.comments;
                 if(data.title == sohucityjson.cip){
+                  getnumber = data.number;
                   current_uv_issue_number = data.number;
                   setCookie('current_uv_issue_number', current_uv_issue_number,1);
                 }
               })
+              if(getnumber == 0 && current_uv_issue_number>0){
+                current_uv_issue_number = 0;
+                setCookie('current_uv_issue_number', 0,1);
+              }
             }
             //console.log("current_uv_issue_number",current_uv_issue_number)
             if(current_uv_issue_number == 0){

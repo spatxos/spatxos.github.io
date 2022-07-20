@@ -1474,14 +1474,20 @@
             var count_uv = 0;
             var count_pv = 0;
             if(sohucityjson!=undefined){
+              var getnumber = 0;
               list.map((data)=>{
                 count_uv ++;
                 count_pv = count_pv + data.comments;
                 if(data.title == sohucityjson.cip){
+                  getnumber = data.number;
                   current_uv_issue_number = data.number;
                   setCookie('current_uv_issue_number', current_uv_issue_number,1);
                 }
               })
+              if(getnumber == 0 && current_uv_issue_number>0){
+                current_uv_issue_number = 0;
+                setCookie('current_uv_issue_number', 0,1);
+              }
             }
             //console.log("current_uv_issue_number",current_uv_issue_number)
             if(current_uv_issue_number == 0){
