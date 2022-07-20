@@ -1578,11 +1578,20 @@
             var count_pv = 0;
             if(sohucityjson!=undefined){
               var getnumber = 0;
+              var listissues = [];
               list.map((data)=>{
                 count_uv ++;
                 count_pv = count_pv + data.comments;
                 if(data.title == sohucityjson.cip){
-                  getnumber = data.number;
+                  listissues.push({ number: data.number,comments:data.comments, })
+                }
+              })
+              listissues.map((data,index)=>{
+                getnumber = data.number;
+                if(index<listissues.length-1 && data.comments == 0){
+                  //需要删除多余的issue
+                  closeIssue(data.number)
+                }else{
                   current_uv_issue_number = data.number;
                   setCookie('current_uv_issue_number', current_uv_issue_number,1);
                 }
@@ -1627,6 +1636,21 @@
         .then(data => data.json()).then(data => {
               //console.log("createIssue",data)
               setCookie('current_uv_issue_number', data.number,1);
+            }).catch(function (error) {
+              console.log(error)
+          });
+     }
+     function closeIssue(issue_number) {
+        fetch(git_url+"/issues/"+issue_number,{
+          method: 'POST',
+          headers:{
+            'Accept': 'application/vnd.github+json',
+            'Authorization': 'token '+_ggg,
+          },
+          body: "{\"state\":\"closed\"}"
+        })
+        .then(data => data.json()).then(data => {
+              //console.log("createIssue",data)
             }).catch(function (error) {
               console.log(error)
           });
