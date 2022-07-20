@@ -148,7 +148,7 @@ sidebar:
           text: '本站总字数：'   # 需要启用 wordcount
           unit: '字'
         visitcounter:
-          service: busuanzi # only busuanzi
+          service: gituv # only busuanzi
           siteuv:
             on: true
             text: '本站访客数：'
@@ -221,7 +221,15 @@ fancybox:
 
 # 统计网站访问数量
 busuanzi:
+  on: false
+
+# 统计网站访问数量
+gituv:
   on: true
+  github_token: 'Z2hwX2dKOVV0S0l3QW10eExxQmVjeWZzNmdYdW1PbWZIcDBWb0NDNw==' # 拿到的githubtoken使用window.btoa(github_token)进行一次加密，防止直接显示在js
+  github_name: 'spatxos'
+  github_repo: 'spatxos.github.io'
+  isdebug: false
 
 # 标签页和分类页中，显示这个标签或者分类在文章中出现的次数
 show_count: true
@@ -515,7 +523,7 @@ changyan:
 
 # gitalk评论
 gitalk:
-  on: false         # 用来做启用判断可以不用
+  on: true         # 用来做启用判断可以不用
   clientID: '130acbddd767ea786fbd' # clientID 
   clientSecret: '0d745043f8d258ef315a966022de0038b28e5c4c' # clientSecret
   owner: 'spatxos'  #Github 用户名,

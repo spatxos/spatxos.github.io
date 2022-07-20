@@ -39,6 +39,11 @@
             <!-- 不蒜子统计 -->
             <%- partial('_partial/footer/busuanzi') %>
           <% } %>
+        <% } else if (item == 'gituv') {  %>
+          <% if (theme.gituv.on) { %>
+            <!-- gituv统计 -->
+            <%- partial('_partial/footer/gituv') %>
+          <% } %>
         <% } else { %>
           <% if (item in theme.site_footer) { %>
             <div><%- markdown(theme.site_footer[item]) %></div>
