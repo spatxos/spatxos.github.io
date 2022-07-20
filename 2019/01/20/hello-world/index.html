@@ -1859,7 +1859,7 @@ he
     var sohucityjson = sohucityjsonstr.length>0? $.parseJSON(getCookie('sohucityjson')):'';
     if(sohucityjson == undefined || sohucityjson.length <= 0){
       sohucityjson = returnCitySN;
-      if(returnCitySN.indexOf("cip")>-1){
+      if(returnCitySN.cip.length>-1){
         setCookie('sohucityjson', JSON.stringify(returnCitySN),1);
       }
     }
