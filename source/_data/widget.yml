@@ -99,16 +99,6 @@ home_widget:
       <div id="github_container"></div>
       <script data-pjax src="/widget/githubcalendar/index.js"></script>
     '
- gituv:
-  - class_name: my_github_uv
-    id_name: my_github_uv
-    order: -1
-    icon: fab fa-github
-    icon_color: blue
-    background: '#fff'
-    html: '
-      <script data-pjax src="/widget/githubuv/index.js"></script>
-    '
   # - class_name: test2
   #   id_name: test2
   #   order: -1

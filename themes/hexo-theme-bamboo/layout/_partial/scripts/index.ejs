@@ -52,4 +52,6 @@
 <% } %>
 
 <!-- github的UV PV统计 -->
-<%- partial('_partial/scripts/gituv') %>
+<% if(theme.gituv.on) { %>
+  <%- partial('_partial/scripts/gituv') %>
+<% } %>
