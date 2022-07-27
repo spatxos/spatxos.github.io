@@ -6,7 +6,7 @@
   <link href="http://spatxos.cn/atom.xml" rel="self"/>
   
   <link href="http://spatxos.cn/"/>
-  <updated>2022-07-27T08:13:24.366Z</updated>
+  <updated>2022-07-27T08:19:48.819Z</updated>
   <id>http://spatxos.cn/</id>
   
   <author>
@@ -17,11 +17,96 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>go-zero单体服务使用泛型简化注册Handler路由</title>
+    <link href="http://spatxos.cn/2022/07/27/cnblogs/16524742/"/>
+    <id>http://spatxos.cn/2022/07/27/cnblogs/16524742/</id>
+    <published>2022-07-27T08:05:00.000Z</published>
+    <updated>2022-07-27T08:19:48.819Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、Golang环境安装及配置Go-Module&quot;&gt;&lt;a href=&quot;#一、Golang环境安装及配置Go-Module&quot; class=&quot;headerlink&quot; title=&quot;一、Golang环境安装及配置Go</summary>
+        
+      
+    
+    
+    
+    
+    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    
+    <category term="go-zero" scheme="http://spatxos.cn/tags/go-zero/"/>
+    
+    <category term="go泛型" scheme="http://spatxos.cn/tags/go%E6%B3%9B%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用github action发布hexo博客到云服务器</title>
+    <link href="http://spatxos.cn/2022/07/15/cnblogs/16478352/"/>
+    <id>http://spatxos.cn/2022/07/15/cnblogs/16478352/</id>
+    <published>2022-07-15T07:31:00.000Z</published>
+    <updated>2022-07-27T08:19:49.151Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&quot;搭建Hexo博客&quot;&gt;&lt;a href=&quot;#搭建Hexo博客&quot; class=&quot;headerlink&quot; title=&quot;搭建Hexo博客&quot;&gt;&lt;/a&gt;搭建Hexo博客&lt;/h1&gt;&lt;p&gt;  环境&lt;br&gt;  &lt;pre</summary>
+        
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="http://spatxos.cn/tags/hexo/"/>
+    
+    <category term="docker" scheme="http://spatxos.cn/tags/docker/"/>
+    
+    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    
+    <category term="github action" scheme="http://spatxos.cn/tags/github-action/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用go把博客园博客下载到本地Hexo目录下</title>
+    <link href="http://spatxos.cn/2022/07/10/cnblogs/16463506/"/>
+    <id>http://spatxos.cn/2022/07/10/cnblogs/16463506/</id>
+    <published>2022-07-10T09:08:00.000Z</published>
+    <updated>2022-07-27T08:19:49.491Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;找到cookie&quot;&gt;&lt;a href=&quot;#找到cookie&quot; class=&quot;headerlink&quot; title=&quot;找到cookie&quot;&gt;&lt;/a&gt;找到cookie&lt;/h2&gt;&lt;p&gt;直接浏览器F12 巴拉巴拉&lt;/p&gt;
+&lt;h2 id=&quot;直接上代码&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="http://spatxos.cn/tags/hexo/"/>
+    
+    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    
+    <category term="go文件下载" scheme="http://spatxos.cn/tags/go%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用hexo admin写博客</title>
     <link href="http://spatxos.cn/2022/07/07/shi-yong-hexo-admin-xie-bo-ke/"/>
     <id>http://spatxos.cn/2022/07/07/shi-yong-hexo-admin-xie-bo-ke/</id>
     <published>2022-07-07T04:17:04.000Z</published>
-    <updated>2022-07-27T08:13:24.366Z</updated>
+    <updated>2022-07-27T08:19:29.503Z</updated>
     
     
       
@@ -45,23 +130,416 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://spatxos.cn/2019/01/20/hello-world/"/>
-    <id>http://spatxos.cn/2019/01/20/hello-world/</id>
-    <published>2019-01-20T13:11:00.000Z</published>
-    <updated>2022-07-27T08:13:24.366Z</updated>
+    <title>群晖下 gitea+drone+harbor实现CI/CD 发布到云服务器</title>
+    <link href="http://spatxos.cn/2022/05/19/cnblogs/16284709/"/>
+    <id>http://spatxos.cn/2022/05/19/cnblogs/16284709/</id>
+    <published>2022-05-19T07:50:00.000Z</published>
+    <updated>2022-07-27T08:20:00.355Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
         
       
     
     
     
+    
+    <category term="docker" scheme="http://spatxos.cn/tags/docker/"/>
+    
+    <category term="gitea" scheme="http://spatxos.cn/tags/gitea/"/>
+    
+    <category term="drone" scheme="http://spatxos.cn/tags/drone/"/>
+    
+    <category term="harbor" scheme="http://spatxos.cn/tags/harbor/"/>
+    
+    <category term="群晖" scheme="http://spatxos.cn/tags/%E7%BE%A4%E6%99%96/"/>
+    
+    <category term=".net6" scheme="http://spatxos.cn/tags/net6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>oracle删除超过N天数据脚本</title>
+    <link href="http://spatxos.cn/2022/02/28/cnblogs/15944641/"/>
+    <id>http://spatxos.cn/2022/02/28/cnblogs/15944641/</id>
+    <published>2022-02-28T02:52:00.000Z</published>
+    <updated>2022-07-27T08:20:00.655Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;公司内做的项目是工厂内的，一般工厂内数据要求的是实时性，很久之前的数据可以自行删除处理，我们数据库用的oracle，所以就想着写一个脚本来删除，这样的话，脚本不管放在那里使用都可以达到效果&lt;/p&gt;
+&lt;p&gt;由于服务器是windows，参照&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS单机安装k8s并部署.NET 6程序 压测 记录</title>
+    <link href="http://spatxos.cn/2022/02/26/cnblogs/15939761/"/>
+    <id>http://spatxos.cn/2022/02/26/cnblogs/15939761/</id>
+    <published>2022-02-26T08:56:00.000Z</published>
+    <updated>2022-07-27T08:20:03.047Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前面部分依照&lt;a href=&quot;https://jishuin.proginn.com/p/763bfbd73d1e&quot;&gt;CentOS单机安装k8s并部署.NET 6程序&lt;/a&gt;来进行，内存、cpu、centos版本一致，之前222元买的三年8M 2c4g&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="docker" scheme="http://spatxos.cn/tags/docker/"/>
+    
+    <category term="k8s" scheme="http://spatxos.cn/tags/k8s/"/>
+    
+    <category term="压测" scheme="http://spatxos.cn/tags/%E5%8E%8B%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ABCD四个顺序执行方法，拓展性延申</title>
+    <link href="http://spatxos.cn/2022/02/14/cnblogs/15892850/"/>
+    <id>http://spatxos.cn/2022/02/14/cnblogs/15892850/</id>
+    <published>2022-02-14T07:54:00.000Z</published>
+    <updated>2022-07-27T08:20:03.391Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天在群里，有人问&lt;br&gt;&lt;code&gt;有几个void返回值的方法，但是我想让这几个方法有执行顺序，要怎么处理，ABCD</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>不同云服务器下，ubuntu下开k3s集群</title>
+    <link href="http://spatxos.cn/2021/12/15/cnblogs/15692108/"/>
+    <id>http://spatxos.cn/2021/12/15/cnblogs/15692108/</id>
+    <published>2021-12-15T04:36:00.000Z</published>
+    <updated>2022-07-27T08:20:06.811Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先先感谢老哥的文章：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/445353413&quot;&gt;h构建多云环境下的K3S集群&lt;/a&gt;，但是我尝试在centos 8.2上面前面一直执行报错&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="k3s" scheme="http://spatxos.cn/tags/k3s/"/>
+    
+    <category term="ubuntu" scheme="http://spatxos.cn/tags/ubuntu/"/>
+    
+    <category term="ubuntu内核升级" scheme="http://spatxos.cn/tags/ubuntu%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go将青龙面板里面的脚本文件都下载到本地</title>
+    <link href="http://spatxos.cn/2021/11/27/cnblogs/15614177/"/>
+    <id>http://spatxos.cn/2021/11/27/cnblogs/15614177/</id>
+    <published>2021-11-27T17:29:00.000Z</published>
+    <updated>2022-07-27T08:20:07.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;纯粹练手用的，大家轻喷&lt;br&gt;青龙面板的脚本文件可以下载到本地，这样的话自己可以研究一下对应的脚本文件，能学到更多的知识，原理其实很简单，F12一下就知道了，青龙面板使用Request</summary>
+        
+      
+    
+    
+    
+    
+    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    
+    <category term="go文件下载" scheme="http://spatxos.cn/tags/go%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建一个完整的K8S集群-------基于CentOS 8系统</title>
+    <link href="http://spatxos.cn/2021/11/27/cnblogs/15193971/"/>
+    <id>http://spatxos.cn/2021/11/27/cnblogs/15193971/</id>
+    <published>2021-11-27T17:27:00.000Z</published>
+    <updated>2022-07-27T08:20:09.671Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;创建三个centos节点：&lt;/p&gt;
+&lt;div class=&quot;cnblogs_code&quot;&gt;
+&lt;pre&gt;&lt;span style=&quot;color: #800080;&quot;&gt;192.168&lt;/span&gt;.&lt;span style=&quot;color:</summary>
+        
+      
+    
+    
+    
+    
+    <category term="k8s" scheme="http://spatxos.cn/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>go更新腾讯云DNSPod的解析记录</title>
+    <link href="http://spatxos.cn/2021/11/27/cnblogs/15614159/"/>
+    <id>http://spatxos.cn/2021/11/27/cnblogs/15614159/</id>
+    <published>2021-11-27T17:05:00.000Z</published>
+    <updated>2022-07-27T08:20:11.071Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;纯粹练手用的，大家轻喷&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取SecretId，SecretKey&lt;br&gt;打开腾讯云，登录之后打开&lt;code&gt;https://console.cloud.tencent.com/cam/capi&lt;/code&gt;,然后&lt;code&gt;新建密钥&lt;/code&gt;记</summary>
+        
+      
+    
+    
+    
+    
+    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    
+    <category term="dnspod" scheme="http://spatxos.cn/tags/dnspod/"/>
+    
+    <category term="域名解析记录" scheme="http://spatxos.cn/tags/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows版本rabbitmq安装及日志level设置</title>
+    <link href="http://spatxos.cn/2021/11/18/cnblogs/15571172/"/>
+    <id>http://spatxos.cn/2021/11/18/cnblogs/15571172/</id>
+    <published>2021-11-18T02:40:00.000Z</published>
+    <updated>2022-07-27T08:20:12.579Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.DirectX Repair 安装缺失的C++组件，不安装缺失的组件会造成第二部安装erl文件夹缺少bin文件夹&lt;br /&gt;2.安装otp_win64_23.1&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="rabbitmq" scheme="http://spatxos.cn/tags/rabbitmq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记vs2019  The view &#39;xxx&#39; was not found.</title>
+    <link href="http://spatxos.cn/2021/02/03/cnblogs/14366411/"/>
+    <id>http://spatxos.cn/2021/02/03/cnblogs/14366411/</id>
+    <published>2021-02-03T05:05:00.000Z</published>
+    <updated>2022-07-27T08:20:12.875Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;版本：Visual Studio 2019&amp;nbsp;16.8.2/16.8.4&lt;br /&gt;.net core 3.1&lt;/p&gt;
+&lt;p&gt;1.检测是否是拼写错误&lt;br /&gt;2.检查.csproj为文件中是否包含有下面的content</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>centos 8及以上安装mysql 8.0</title>
+    <link href="http://spatxos.cn/2020/09/01/cnblogs/13596927/"/>
+    <id>http://spatxos.cn/2020/09/01/cnblogs/13596927/</id>
+    <published>2020-09-01T08:30:00.000Z</published>
+    <updated>2022-07-27T08:20:14.231Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;本文适用于centos 8及以上安装mysql 8.0，整体耗时20分钟内，不需要翻墙&lt;/h1&gt;
+&lt;h2&gt;1.环境先搞好&lt;/h2&gt;
+&lt;div class=&quot;cnblogs_code&quot;&gt;
+&lt;pre&gt; systemctl stop firewalld    &lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://spatxos.cn/tags/linux/"/>
+    
+    <category term="mysql" scheme="http://spatxos.cn/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.net core3.1 abp动态菜单和动态权限（动态菜单实现和动态权限添加）  （三）</title>
+    <link href="http://spatxos.cn/2020/06/13/cnblogs/13096427/"/>
+    <id>http://spatxos.cn/2020/06/13/cnblogs/13096427/</id>
+    <published>2020-06-13T10:16:00.000Z</published>
+    <updated>2022-07-27T08:20:19.688Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我们来创建动态菜单吧&amp;nbsp;&lt;/p&gt;
+&lt;div class=&quot;cnblogs_code&quot;&gt;
+&lt;pre&gt;首先，先对动态菜单的概念、操作、流程进行约束：&lt;br /&gt;1.Host和各个Tenant有自己的自定义菜单&lt;br</summary>
+        
+      
+    
+    
+    
+    
+    <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
+    
+    <category term="abp" scheme="http://spatxos.cn/tags/abp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.net core3.1 abp动态菜单和动态权限（思路）  （二）</title>
+    <link href="http://spatxos.cn/2020/06/12/cnblogs/13089690/"/>
+    <id>http://spatxos.cn/2020/06/12/cnblogs/13089690/</id>
+    <published>2020-06-12T03:57:00.000Z</published>
+    <updated>2022-07-27T08:20:21.452Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ps：本文需要先把abp的源码下载一份来下，跟着一起找实现，更容易懂&lt;/p&gt;
+&lt;p&gt;在abp中，对于权限和菜单使用静态来管理，菜单的加载是在登陆页面的地方（具体是怎么知道的，浏览器按F12，然后去sources中去找）&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
+    
+    <category term="abp" scheme="http://spatxos.cn/tags/abp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.net core3.1 abp学习开始（一）</title>
+    <link href="http://spatxos.cn/2020/06/09/cnblogs/13081247/"/>
+    <id>http://spatxos.cn/2020/06/09/cnblogs/13081247/</id>
+    <published>2020-06-09T14:11:00.000Z</published>
+    <updated>2022-07-27T08:20:24.460Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;vs版本 2019，链接数据库使用Navicat，数据库MySql&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;abp的官网：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
+    
+    <category term="abp" scheme="http://spatxos.cn/tags/abp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>api.versioning 版本控制 自动识别最高版本和多Area但同名Contoller问题解决办法</title>
+    <link href="http://spatxos.cn/2020/06/03/cnblogs/13040338/"/>
+    <id>http://spatxos.cn/2020/06/03/cnblogs/13040338/</id>
+    <published>2020-06-03T14:02:00.000Z</published>
+    <updated>2022-07-27T08:20:25.284Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;cnblogs_code&quot;&gt;
+&lt;pre&gt;Microsoft.AspNetCore.Mvc.Versioning //引入程序集&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;.net core 下面api的版本控制作用不需要多说，可以查阅&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>.netcore 定制化项目开发的思考和实现</title>
+    <link href="http://spatxos.cn/2020/05/06/cnblogs/12833014/"/>
+    <id>http://spatxos.cn/2020/05/06/cnblogs/12833014/</id>
+    <published>2020-05-06T04:00:00.000Z</published>
+    <updated>2022-07-27T08:20:26.172Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今年年初进了一家新公司，进入之后一边维护老项目一边了解项目流程，为了接下来的项目重做积累点经验。&lt;/p&gt;
+&lt;p&gt;先说下老项目吧，.net fx</summary>
+        
+      
+    
+    
+    
+    
+    <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
+    
+    <category term="定制化" scheme="http://spatxos.cn/tags/%E5%AE%9A%E5%88%B6%E5%8C%96/"/>
     
   </entry>
   
