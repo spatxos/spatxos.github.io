@@ -7,4 +7,4 @@ toc: false # 不显示文章目录
 # layout: "friends" # 这个不要了
 ---
 
-{% issues sites | api=https://api.github.com/repos/spatxos/friends/issues?sort=updated&state=open&page=1&per_page=1000&labels=active %}
+{% issues sites | api=https://api.github.com/repos/spatxos/friends/issues?sort=updated&page=1&per_page=1000&labels=active %}
