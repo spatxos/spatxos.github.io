@@ -32,7 +32,7 @@ menu:
 # github地址, 头部导航右上角的github链接
 Github: 
   on: true
-  url: https://github.com/wangpengzong
+  url: https://github.com/spatxos
 
 # 网站logo
 logo: /medias/logo.png # 为空则不显示
@@ -50,7 +50,7 @@ sidebar:
       avatar: https://avatars.githubusercontent.com/u/29770198?s=400&u=6808657eac5be8fc769cd9db07d6cb6923d303be&v=4
       shape: rectangle # circle, rectangle
       url: /about/
-      title: 秋名山修车
+      title: 座山客
       subtitle: 等下我，我先躺一会儿
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Long Cang,cursive
@@ -62,7 +62,7 @@ sidebar:
         - icon: fas fa-envelope
           url: mailto:wangpengzong@outlook.com
         - icon: fab fa-github
-          url: https://github.com/wangpengzong
+          url: https://github.com/spatxos
         - icon: fab fa-qq
           url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=670526967
     # ---------------------------------------
@@ -182,7 +182,7 @@ swiper:
   defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
   defaultVideo: 'https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
-  defaultTile: '秋名山修车' # 标题
+  defaultTile: '座山客' # 标题
   defaultDesc: ['ball ball u make a people bar.'] #描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
   # defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
   # defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接 
@@ -717,7 +717,7 @@ site_footer:
     #   url: https://github.com/yuang01/hexo-theme-bamboo
     # - icon: fas fa-qq
     #   url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541
-  copyright: 'Copyright © 2022 - 2022 <a href="https://github.com/wangpengzong">wangpengzong</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
+  copyright: 'Copyright © 2022 - 2022 <a href="https://github.com/spatxos">spatxos</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
   custom: # 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
      - label: '<br>'
      - label: '[浙ICP备2021021999号](https://beian.miit.gov.cn)'

@@ -1,4 +1,4 @@
-title: 使用hexo admin写博客
+title: 使用hexo admin
 author: spatxos
 date: 2022-07-07 12:17:04
 swiper: true # 将改文章放入轮播图中
@@ -6,7 +6,7 @@ categories: ['前端']
 tags: ['hexo', 'hexo-admin']
 ---
 ## 安装hexo admin
-1. 安装hexo并初始化一个博客
+1. 安装hexo并初始化
 ```
 npm install -g hexo
 cd ~/
