@@ -517,7 +517,7 @@ changyan:
 
 # gitalk评论
 gitalk:
-  on: true         # 用来做启用判断可以不用
+  on: false         # 用来做启用判断可以不用
   clientID: '130acbddd767ea786fbd' # clientID 
   clientSecret: '0d745043f8d258ef315a966022de0038b28e5c4c' # clientSecret
   owner: 'spatxos'  #Github 用户名,
