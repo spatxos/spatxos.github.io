@@ -23,13 +23,21 @@ function loadExternalResource(url, type) {
 		}
 	});
 }
-
 // 加载 waifu.css live2d.min.js waifu-tips.js
 if (screen.width >= 768) {
+	const promise3 = new Promise((resolve, reject) => {
+		var ishasbody = setInterval(() => {
+			if(document.body!=null){
+				clearInterval(ishasbody);
+			}
+		}, 1000);
+	  })
+	
 	Promise.all([
 		loadExternalResource(live2d_path + "waifu.css", "css"),
 		loadExternalResource(live2d_path + "live2d.min.js", "js"),
-		loadExternalResource(live2d_path + "waifu-tips.js", "js")
+		loadExternalResource(live2d_path + "waifu-tips.js", "js"),
+		promise3
 	]).then(() => {
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
