@@ -14,8 +14,8 @@
   <title>使用hexo admin | 坐山客</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
-  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/font_1911880_c1nvbyezg17.css">
+  <link href="/css/fontawesome-free/all.min.css" rel="stylesheet">
   <link href="/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
   
   
@@ -26,7 +26,7 @@
         }
     </script>
     
-    <script src="https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuang01/-widget@latest/autoload.js"></script>
     <script>
         var live2dOpen = eval('true') || false;
         if (!live2dOpen) {
@@ -59,8 +59,8 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <script src="/js/pace.min.js"></script>
+    <link href="/css/pace-theme-flash.css" rel="stylesheet">
 
     
 
@@ -88,13 +88,13 @@
   <!-- 依赖于jquery和vue -->
   
     
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 
   
 
   
     
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+<script src="/js/vue.min.js"></script>
 
   
   
@@ -205,7 +205,7 @@
 <script src="/js/vue-seamless-scroll/index.js"></script>
 
 <!-- 打字机效果js -->
-<script src="https://unpkg.com/typed.js@2.0.11"></script>
+<script src="/js/typed.js"></script>
 
 
     <div id="safearea">
@@ -617,7 +617,7 @@
         }
       }
     </script>
-    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    <script src="/js/he-simple-common.js?v=2.0"></script> 
     
 </header>
         <!-- 内容区域 -->
@@ -1118,7 +1118,7 @@ res.done(&#123;
     if (document.getElementsByClassName('mermaid').length) {
       if (window.mermaidJsLoad) mermaid.init()
       else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+        loadScript('/js/mermaid.min.js').then(() => {
           window.mermaidJsLoad = true
           mermaid.initialize({
             theme: 'default',
@@ -1464,8 +1464,8 @@ res.done(&#123;
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+<script src="/js/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
     
 
     <!-- 图片放大 -->
@@ -1483,9 +1483,9 @@ res.done(&#123;
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
         if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            bp.src = '/js/httpspush.js';
         } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            bp.src = '/js/httppush.js';
         }
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(bp, s);
@@ -1715,8 +1715,8 @@ res.done(&#123;
 
 <!-- markdown代码一键复制功能 -->
 
-  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
-  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <link rel="stylesheet" href="/css/ayu.css">
+  <script src="/js/ayu.umd.min.js"></script>
   <script src="/js/clipboard/clipboard.min.js"></script>
   <div id="appCopy">
   </div>
@@ -1770,7 +1770,7 @@ res.done(&#123;
   
 
 <!-- 图片懒加载 -->
-<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script defer src="/js/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -1820,7 +1820,6 @@ res.done(&#123;
 
   
   <script src="http://101.43.82.98:9000/"></script>
-  <script id="ipcn" src="https://ip.cn/api/index?ip=&type=0"></script>
 
   <script data-pjax>
     var _ggg = window.atob('Z2hwX2RYNGo2U2J6OVYyRVJESExGVERQQzFrZEdCR0dLQTFzUUFrWg==');

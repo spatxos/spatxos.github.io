@@ -95,13 +95,13 @@ html,
 *[cursor-default] {
   background-color: #f2f2f2;
   font-size: 16px;
-  cursor: url("https://zhutix.com/wp-content/themes/b2/x1.cur"), auto;
+  cursor: url("/js/cursor/x1.cur"), auto;
 }
 a:hover,
 .swiper-pagination-bullet,
 .danmuBtn,
 *[pointer] {
-  cursor: url("https://zhutix.com/wp-content/themes/b2/x2.cur"), pointer !important;
+  cursor: url("/js/cursor/x2.cur"), pointer !important;
 }
 p,
 input,
@@ -175,7 +175,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #fff;
 }
 .bg-floor {
-  background: url("https://pic1.zhimg.com/80/v2-b4b71405d08bc1952025ba1bd5db54f3_1440w.jpg?source=1940ef5c");
+  background: url("/medias/home/v2-b4b71405d08bc1952025ba1bd5db54f3_1440w.jpg?source=1940ef5c");
   background-size: cover;
   transition: all 0.3s;
 }
@@ -2279,7 +2279,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   box-sizing: border-box;
   transition: all 0.3s;
   position: relative;
-  background: url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png");
+  background: url("/medias/f9730ab637b7ca47.png");
 }
 .motto .motto-title {
   text-align: center;
@@ -2303,7 +2303,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   border-radius: 10px;
   box-sizing: border-box;
   transition: all 0.3s;
-  background: url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png");
+  background: url("/medias/f9730ab637b7ca47.png");
 }
 .index-notice .index-notice-icon {
   color: #f00;
@@ -3708,7 +3708,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   padding: 0 15px;
   height: 100%;
   line-height: 60px;
-  cursor: url("https://zhutix.com/wp-content/themes/b2/x2.cur"), pointer;
+  cursor: url("/js/cursor/x2.cur"), pointer;
   transition: background-color 0.3s;
 }
 .search:hover {
@@ -4198,7 +4198,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   text-align: center;
   box-shadow: -2px 2px 2px 2px rgba(255,255,255,0.5);
   font-size: 14px;
-  cursor: url("https://zhutix.com/wp-content/themes/b2/x2.cur"), pointer;
+  cursor: url("/js/cursor/x2.cur"), pointer;
   transition: background-color 0.3s;
   z-index: 999;
 }
@@ -4300,7 +4300,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   line-height: 50px;
   text-align: center;
   box-shadow: -2px 2px 2px 2px rgba(255,255,255,0.5);
-  cursor: url("https://zhutix.com/wp-content/themes/b2/x2.cur"), pointer;
+  cursor: url("/js/cursor/x2.cur"), pointer;
   transition: background-color 0.3s;
   z-index: 999;
   box-sizing: border-box;
