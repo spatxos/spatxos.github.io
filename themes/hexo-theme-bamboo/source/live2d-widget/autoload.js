@@ -25,25 +25,23 @@ function loadExternalResource(url, type) {
 }
 // 加载 waifu.css live2d.min.js waifu-tips.js
 if (screen.width >= 768) {
-	const promise3 = new Promise((resolve, reject) => {
-		var ishasbody = setInterval(() => {
-			if(document.body!=null){
-				clearInterval(ishasbody);
-			}
-		}, 1000);
-	  })
 	
 	Promise.all([
 		loadExternalResource(live2d_path + "waifu.css", "css"),
 		loadExternalResource(live2d_path + "live2d.min.js", "js"),
-		loadExternalResource(live2d_path + "waifu-tips.js", "js"),
-		promise3
+		loadExternalResource(live2d_path + "waifu-tips.js", "js")
 	]).then(() => {
-		initWidget({
-			waifuPath: live2d_path + "waifu-tips.json",
-			//apiPath: "https://live2d.fghrsh.net/api/",
-			cdnPath: live2d_path
-		});
+		var ishasbody = setInterval(() => {
+			if(document.body!=null){
+				clearInterval(ishasbody);
+				initWidget({
+					waifuPath: live2d_path + "waifu-tips.json",
+					//apiPath: "https://live2d.fghrsh.net/api/",
+					cdnPath: live2d_path
+				});
+			}
+		}, 1000);
+		
 	});
 }
 // initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
