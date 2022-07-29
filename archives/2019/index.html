@@ -1486,7 +1486,7 @@
             'Accept': 'application/vnd.github+json',
             'Authorization': 'token '+_ggg,
           },
-          body: "{\"title\":\""+cityjson.cip+"\",\"body\":\"Add a UV record,IP:"+cityjson.cip+"，区域:"+cityjson.cname+"\",\"labels\":[\"UV\"]}"
+          body: "{\"title\":\""+cityjson.cip+"\",\"body\":\"Add a UV record,IP:"+cityjson.cip+"，区域:"+cityjson.cname+"，页面:"+window.location.href+"\",\"labels\":[\"UV\"]}"
         })
         .then(data => data.json()).then(data => {
               //console.log("createIssue",data)
