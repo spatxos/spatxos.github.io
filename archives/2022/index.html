@@ -1400,7 +1400,7 @@
 <!-- github的UV PV统计 -->
 
   
-  <script src="https://pv.sohu.com/cityjson"></script>
+  <script src="http://101.43.82.98:9000/"></script>
   <script id="ipcn" src="https://ip.cn/api/index?ip=&type=0"></script>
 
   <script data-pjax>
@@ -1409,15 +1409,15 @@
     var github_repo = 'spatxos.github.io';
     var isgituv_debug = 'false' === 'true';
     var git_url = 'https://api.github.com/repos/'+github_name+"/"+github_repo;
-    var sohucityjsonstr = getCookie('sohucityjson');
-    var sohucityjson = sohucityjsonstr.length>0? $.parseJSON(getCookie('sohucityjson')):'';
-    if(sohucityjson == undefined || sohucityjson.length <= 0){
-      sohucityjson = returnCitySN;
+    var cityjsonstr = getCookie('cityjson');
+    var cityjson = cityjsonstr.length>0? $.parseJSON(getCookie('cityjson')):'';
+    if(cityjson == undefined || cityjson.length <= 0){
+      cityjson = returnCitySN;
       if(returnCitySN.cip.length>-1){
-        setCookie('sohucityjson', JSON.stringify(returnCitySN),1);
+        setCookie('cityjson', JSON.stringify(returnCitySN),1);
       }
     }
-    //console.log("ip",sohucityjson)
+    //console.log("ip",cityjson)
     var current_uv_issue_number = getCookie('current_uv_issue_number');
     getissue();
     function getissue() {
@@ -1431,13 +1431,13 @@
             //console.log("git issue",list)
             var count_uv = 0;
             var count_pv = 0;
-            if(sohucityjson!=undefined){
+            if(cityjson!=undefined){
               var getnumber = 0;
               var listissues = [];
               list.map((data)=>{
                 count_uv ++;
                 count_pv = count_pv + data.comments;
-                if(data.title == sohucityjson.cip){
+                if(data.title == cityjson.cip){
                   listissues.push({ number: data.number,comments:data.comments, })
                 }
               })
@@ -1486,7 +1486,7 @@
             'Accept': 'application/vnd.github+json',
             'Authorization': 'token '+_ggg,
           },
-          body: "{\"title\":\""+sohucityjson.cip+"\",\"body\":\"Add a UV record,IP:"+sohucityjson.cip+"，区域:"+sohucityjson.cname+"\",\"labels\":[\"UV\"]}"
+          body: "{\"title\":\""+cityjson.cip+"\",\"body\":\"Add a UV record,IP:"+cityjson.cip+"，区域:"+cityjson.cname+"\",\"labels\":[\"UV\"]}"
         })
         .then(data => data.json()).then(data => {
               //console.log("createIssue",data)
