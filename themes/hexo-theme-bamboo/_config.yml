@@ -523,7 +523,9 @@ gitalk:
   owner: 'spatxos'  #Github 用户名,
   repo: 'gitalk-comments'    #储存评论issue的github仓库名
   admin: 'spatxos'     #管理人,
-  proxy: 'https://github.com/login/oauth/access_token'
+  distractionFreeMode: false,  # Facebook-like distraction free mode
+  perPage: 100,
+  proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
 
 # utterance 评论  官网：https://utteranc.es/, 建议用这个评论
 utterance:

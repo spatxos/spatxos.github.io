@@ -2,7 +2,7 @@
 title: Hello World
 date: 2019-01-20 21:11
 swiper: true
-swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm'
+swiperImg: '/medias/ada660a8c596431983dddd411a12f2b3.jpg'
 swiperDesc: '我是文章在轮播图中的摘要'
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
