@@ -517,13 +517,13 @@ changyan:
 
 # gitalk评论
 gitalk:
-  on: false         # 用来做启用判断可以不用
+  on: true         # 用来做启用判断可以不用
   clientID: '130acbddd767ea786fbd' # clientID 
   clientSecret: '0d745043f8d258ef315a966022de0038b28e5c4c' # clientSecret
   owner: 'spatxos'  #Github 用户名,
   repo: 'gitalk-comments'    #储存评论issue的github仓库名
   admin: 'spatxos'     #管理人,
-  proxy: 'http://pigass.cn/proxy/https://github.com/login/oauth/access_token'
+  proxy: 'https://github.com/login/oauth/access_token'
 
 # utterance 评论  官网：https://utteranc.es/, 建议用这个评论
 utterance:
