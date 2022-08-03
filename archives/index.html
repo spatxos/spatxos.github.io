@@ -1408,6 +1408,29 @@
 <!-- 评论所需js -->
 
   
+    <script src="/js/gitalk.min.js"></script>
+<script type="text/javascript">
+  comment_el = '#gitalk-container';
+  load_gitalk = function () {
+    if ($(comment_el).length) {
+      var gitalk = new Gitalk({
+        clientID: '130acbddd767ea786fbd',
+        clientSecret: '0d745043f8d258ef315a966022de0038b28e5c4c',
+        id: window.location.pathname,
+        repo: 'gitalk-comments',
+        owner: 'spatxos',
+        admin: ['spatxos'],
+        proxy: 'https://github.com/login/oauth/access_token'
+      })
+      gitalk.render('gitalk-container')
+    }
+  }
+  $(document).ready(load_gitalk);
+  document.addEventListener('pjax:complete', function () {
+    load_gitalk();
+  });
+</script>
+  
 
 
 <!-- 鼠标点击特效 -->
