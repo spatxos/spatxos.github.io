@@ -50,7 +50,7 @@ sidebar:
       avatar: /medias/home/29770198.jfif
       shape: rectangle # circle, rectangle
       url: /about/
-      title: 小白的学习笔记
+      title: spatxos
       subtitle: 等下我，我先躺一会儿
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Long Cang,cursive
@@ -182,7 +182,7 @@ swiper:
   defaultImg: '/medias/home/63f8f2163ab61b2f.png' # 图片，没有则随机选取
   defaultVideo: '/medias/home/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4' # video，min-width:992px show
   defaultVideoLoadingImg: '/medias/home/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
-  defaultTile: '小白的学习笔记' # 标题
+  defaultTile: 'spatxos' # 标题
   defaultDesc: ['ball ball u make a people bar.'] #描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
   # defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
   # defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接 
