@@ -107,7 +107,7 @@ jobs:
             chmod 777 /root/${{secrets.BLOG_NAME}}-blog/html/
             docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
             docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
-            docker run -it --rm -d -p 80:80 -p 443:443  -v /root/${{secrets.BLOG_NAME}}-blog/html/ssl/https.conf:/etc/nginx/nginx.conf -v /root/${{secrets.BLOG_NAME}}-blog/html/ssl:/root/${{secrets.BLOG_NAME}}-blog/html/ssl --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
+            docker run -it --rm -d -p 80:80 -p 443:443  -v /root/${{secrets.BLOG_NAME}}-blog/html/conf/:/etc/nginx/conf.d/ -v /root/${{secrets.BLOG_NAME}}-blog/html/ssl:/etc/nginx/ssl/ --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
             docker image rm `docker images --format='{{.Repository}}:{{.Tag}}' --filter reference=${{secrets.DOCKER_REGISTRY}}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog*:*`
             docker cp ${{secrets.BLOG_NAME}}-blog:/usr/share/nginx/html/ /root/${{secrets.BLOG_NAME}}-blog/html/
             docker system prune -f
