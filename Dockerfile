@@ -2,6 +2,7 @@
 FROM nginx:latest
 WORKDIR /app
 COPY ./public /usr/share/nginx/html
+RUN ls -la
 RUN cp /usr/share/nginx/html/https/https.conf /etc/nginx/conf.d/
 RUN cp /usr/share/nginx/html/https/1_spatxos.cn_bundle.crt /etc/nginx/cert/
 RUN cp /usr/share/nginx/html/https/2_spatxos.cn.key /etc/nginx/cert/
