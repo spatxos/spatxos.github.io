@@ -99,6 +99,7 @@ jobs:
             docker stop $(docker ps -aqf "name=${{secrets.BLOG_NAME}}-blog")
             docker container rm ${{secrets.BLOG_NAME}}-blog
             docker rmi ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog
+            docker image rm `docker images --format='{{.Repository}}:{{.Tag}}' --filter reference=${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog*:*`
             echo 查看是否成功删除${{secrets.BLOG_NAME}}-blog
             docker ps -a
             echo 从harbor拉取docker镜像
