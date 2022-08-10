@@ -9,7 +9,7 @@ on:
 
 jobs:
   job1:
-    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.0.7
+    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.0.8
     secrets:
       cnblogsisdown: ${{ secrets.CNBLOGS_ISDOWN }}
       cnblogscookie: ${{ secrets.CNBLOGS_COOKIE }}
