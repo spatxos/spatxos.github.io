@@ -9,7 +9,7 @@ on:
 
 jobs:
   job1:
-    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@v1
+    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml
 
   # Docker 自动部署
   down2host: 
