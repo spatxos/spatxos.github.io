@@ -56,7 +56,6 @@ jobs:
             VERSION: ${{ github.ref_name }}
         run: |
             mkdir /home/runner/work/release
-            ls /home/runner/work/clis/
             zip -j /home/runner/work/release/${{secrets.BLOG_NAME}}.$VERSION.zip /home/runner/work/${{secrets.BLOG_NAME}}.github.io/${{secrets.BLOG_NAME}}.github.io/public/*
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
