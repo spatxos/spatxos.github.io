@@ -1,0 +1,87 @@
+name: Build Docker Image Run Host
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    env:
+      CNBLOGS_ISDOWN: ${{secrets.CNBLOGS_ISDOWN}}
+      CNBLOGS_COOKIE: ${{secrets.CNBLOGS_COOKIE}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.15.0'
+
+      - name: Set up Go 1.18.3
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.18.3
+        id: go
+      - name: Pull blogs from cnblogs
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        run: |
+          cd source/_posts/
+          go run downmyblogs.go -cookie ${{env.CNBLOGS_COOKIE}}
+
+      - name: Setup Hexo
+        run: |
+          npm install hexo-cli -g
+          npm install hexo-generator-search --save
+          npm install hexo-generator-feed --save
+          npm i hexo-wordcount
+          npm install
+      # get image tag name
+      - name: Get Image Tag Name
+        run: |
+          if [ x${{ github.event.inputs.tag }} == x"" ]; then
+            echo "TAG_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          else
+            echo "TAG_NAME=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          fi
+      - name: Deploy and Build Image
+        run: |
+          hexo clean
+          hexo deploy
+      - name: Package assets
+        env:
+            VERSION: ${{ github.ref_name }}
+        run: |
+            mkdir /home/runner/work/release
+            ls /home/runner/work/clis/
+            zip -j /home/runner/work/release/${{secrets.BLOG_NAME}}.$VERSION.zip /home/runner/work/${{secrets.BLOG_NAME}}.github.io/${{secrets.BLOG_NAME}}.github.io/public/*
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+            name: blog-static
+            path: /home/runner/work/release
+
+  release_cli:
+    name: Publish release
+    needs: ['build']
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: blog-static
+      - name: list blog-static
+        run: ls blog-static
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+            files: blog-static/**
+            generate_release_notes: true
+
+
+

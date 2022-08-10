@@ -1,0 +1,40 @@
+name: down2host
+
+on:
+  push:
+    tags:
+      - "host-v*.*.*"  # 后面每次更新提交，只有打上tag之后才会进行发布更新，减少actions执行次数
+      - "v*.*.*"  # 后面每次更新提交，只有打上tag之后才会进行发布更新，减少actions执行次数
+  workflow_dispatch:
+
+jobs:
+  job1:
+    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@v1
+
+  # Docker 自动部署
+  down2host: 
+    needs: [job1]
+    name: Down 2 Host
+    runs-on: ubuntu-latest
+    steps:
+      # get image tag name
+      - name: Get Image Tag Name
+        run: |
+          if [ x${{ github.event.inputs.tag }} == x"" ]; then
+            echo "TAG_NAME=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          else
+            echo "TAG_NAME=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          fi
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        env:
+            VERSION: ${{ github.ref_name }}
+        with:
+          host: ${{ secrets.HOST }} # 服务器ip
+          username: ${{ secrets.HOST_USERNAME }} # 服务器登录用户名
+          password: ${{ secrets.HOST_PASSWORD }} # 服务器登录密码
+          port: ${{ secrets.HOST_PORT }} # 服务器ssh端口
+          script: |
+            wget https://github.com/spatxos/spatxos.github.io/releases/download/${{env.TAG_NAME}}/${{secrets.BLOG_NAME}}.$VERSION.zip
+            mkdir /root/${{secrets.BLOG_NAME}}-blog/html1/
+            unzip -d /root/${{secrets.BLOG_NAME}}-blog/html1/ ${{secrets.BLOG_NAME}}.$VERSION.zip
