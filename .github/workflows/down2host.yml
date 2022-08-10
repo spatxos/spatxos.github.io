@@ -9,11 +9,11 @@ on:
 
 jobs:
   job1:
-    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.0.5
+    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.0.6
     secrets:
-      CNBLOGS_ISDOWN: ${{ secrets.CNBLOGS_ISDOWN }}
-      CNBLOGS_COOKIE: ${{ secrets.CNBLOGS_COOKIE }}
-      BLOG_NAME: ${{ secrets.BLOG_NAME }}
+      cnblogsisdown: ${{ secrets.CNBLOGS_ISDOWN }}
+      cnblogscookie: ${{ secrets.CNBLOGS_COOKIE }}
+      blogname: ${{ secrets.BLOG_NAME }}
 
   # Docker 自动部署
   down2host: 
