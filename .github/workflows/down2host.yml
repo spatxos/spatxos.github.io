@@ -9,7 +9,7 @@ on:
 
 jobs:
   job1:
-    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.0.9
+    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.1.0
     secrets:
       cnblogsisdown: ${{ secrets.CNBLOGS_ISDOWN }}
       cnblogscookie: ${{ secrets.CNBLOGS_COOKIE }}
@@ -38,5 +38,5 @@ jobs:
           port: ${{ secrets.HOST_PORT }} # 服务器ssh端口
           script: |
             wget https://github.com/spatxos/spatxos.github.io/releases/download/${{env.TAG_NAME}}/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
-            mkdir /root/${{secrets.BLOG_NAME}}-blog/html1/
-            unzip -d /root/${{secrets.BLOG_NAME}}-blog/html1/ ${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
+            mkdir /root/${{secrets.BLOG_NAME}}-blog/html/
+            unzip -d /root/${{secrets.BLOG_NAME}}-blog/html/ ${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
