@@ -28,16 +28,16 @@ jobs:
           node-version: '16.15.0'
 
       - name: Set up Go 1.18.3
-        if: ${{ env.cnblogsisdown == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
         uses: actions/setup-go@v1
         with:
           go-version: 1.18.3
         id: go
       - name: Pull blogs from cnblogs
-        if: ${{ env.cnblogsisdown == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
+        if: ${{ env.CNBLOGS_ISDOWN == 'true' }}  # 是否从博客园下载，可通过更改CNBLOGS_ISDOWN的值进行提交时的下载控制
         run: |
           cd source/_posts/
-          go run downmyblogs.go -cookie ${{env.cnblogscookie}}
+          go run downmyblogs.go -cookie ${{env.CNBLOGS_COOKIE}}
 
       - name: Setup Hexo
         run: |
@@ -61,11 +61,9 @@ jobs:
           pwd
           ls -la
       - name: Package assets
-        env:
-            VERSION: ${{ github.ref_name }}
         run: |
             mkdir /home/runner/work/release
-            zip -j /home/runner/work/release/${{secrets.blogname}}.$VERSION.zip /home/runner/work/${{secrets.blogname}}.github.io/${{secrets.blogname}}.github.io/public/*
+            zip -j /home/runner/work/release/${{secrets.blogname}}.${{env.TAG_NAME}}.zip /home/runner/work/${{secrets.blogname}}.github.io/${{secrets.blogname}}.github.io/public/
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:

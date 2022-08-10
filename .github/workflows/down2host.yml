@@ -9,13 +9,13 @@ on:
 
 jobs:
   job1:
-    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.0.6
+    uses: spatxos/spatxos.github.io/.github/workflows/down-build.yml@host-v0.0.7
     secrets:
       cnblogsisdown: ${{ secrets.CNBLOGS_ISDOWN }}
       cnblogscookie: ${{ secrets.CNBLOGS_COOKIE }}
       blogname: ${{ secrets.BLOG_NAME }}
 
-  # Docker 自动部署
+  # Host 自动部署
   down2host: 
     needs: [job1]
     name: Down 2 Host
@@ -31,14 +31,12 @@ jobs:
           fi
       - name: Deploy
         uses: appleboy/ssh-action@master
-        env:
-            VERSION: ${{ github.ref_name }}
         with:
           host: ${{ secrets.HOST }} # 服务器ip
           username: ${{ secrets.HOST_USERNAME }} # 服务器登录用户名
           password: ${{ secrets.HOST_PASSWORD }} # 服务器登录密码
           port: ${{ secrets.HOST_PORT }} # 服务器ssh端口
           script: |
-            wget https://github.com/spatxos/spatxos.github.io/releases/download/${{env.TAG_NAME}}/${{secrets.BLOG_NAME}}.$VERSION.zip
+            wget https://github.com/spatxos/spatxos.github.io/releases/download/${{env.TAG_NAME}}/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
             mkdir /root/${{secrets.BLOG_NAME}}-blog/html1/
             unzip -d /root/${{secrets.BLOG_NAME}}-blog/html1/ ${{secrets.BLOG_NAME}}.$VERSION.zip
