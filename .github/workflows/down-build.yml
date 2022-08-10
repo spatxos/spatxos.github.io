@@ -2,6 +2,14 @@ name: Build Docker Image Run Host
 
 on:
   workflow_call:
+    inputs:
+      secrets:
+        CNBLOGS_ISDOWN:
+          required: true
+        CNBLOGS_COOKIE:
+          required: true
+        BLOG_NAME:
+          required: true
 
 jobs:
   build:
@@ -51,6 +59,8 @@ jobs:
         run: |
           hexo clean
           hexo deploy
+          pwd
+          ls -la
       - name: Package assets
         env:
             VERSION: ${{ github.ref_name }}
