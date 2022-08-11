@@ -40,3 +40,4 @@ jobs:
             wget https://github.com/spatxos/spatxos.github.io/releases/download/${{env.TAG_NAME}}/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
             mkdir /root/${{secrets.BLOG_NAME}}-blog/html/
             unzip -d /root/${{secrets.BLOG_NAME}}-blog/html/ ${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
+            find . -name 'spatxos*v*.*.*.zip' | xargs rm
