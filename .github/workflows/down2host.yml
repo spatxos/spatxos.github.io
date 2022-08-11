@@ -29,6 +29,21 @@ jobs:
           else
             echo "TAG_NAME=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
           fi
+      - name: Download build artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: blog-static
+      - name: list blog-static
+        run: ls blog-static
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USERNAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
+          port: ${{ secrets.HOST_PORT }}
+          source: "blog-static/*"
+          target: "root"
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
