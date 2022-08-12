@@ -103,13 +103,16 @@ jobs:
             docker pull ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
             docker tag ${{ secrets.DOCKER_REGISTRY }}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}} ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
             docker run -it --rm -d -p 800:80 --name ${{secrets.BLOG_NAME}}-blog ${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog:${{env.TAG_NAME}}
+            echo docker容器启动成功
+            docker images
+            docker ps -a
             rm -rf /root/${{secrets.BLOG_NAME}}-blog/html/*
-            docker cp -rf ${{secrets.BLOG_NAME}}-blog:/usr/share/nginx/html/ /root/${{secrets.BLOG_NAME}}-blog/
+            docker cp ${{secrets.BLOG_NAME}}-blog:/usr/share/nginx/html/ /root/${{secrets.BLOG_NAME}}-blog/
             docker system prune -f
             docker stop $(docker ps -aqf "name=${{secrets.BLOG_NAME}}-blog")
             docker container rm ${{secrets.BLOG_NAME}}-blog
             docker image rm `docker images --format='{{.Repository}}:{{.Tag}}' --filter reference=${{secrets.DOCKER_REGISTRY}}/${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog*:*`
             docker image rm `docker images --format='{{.Repository}}:{{.Tag}}' --filter reference=${{secrets.BLOG_NAME}}/${{secrets.BLOG_NAME}}-blog*:*`
-            echo docker容器启动成功
+            echo docker容器和镜像删除成功
 
 
