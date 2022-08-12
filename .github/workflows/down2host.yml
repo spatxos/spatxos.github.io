@@ -35,15 +35,18 @@ jobs:
           name: blog-static
       - name: list blog-static
         run: ls blog-static
-      - name: copy file via ssh password
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.HOST_USERNAME }}
-          password: ${{ secrets.HOST_PASSWORD }}
-          port: ${{ secrets.HOST_PORT }}
-          source: "blog-static/*"
-          target: "root"
+      - name: post zip
+        run: |
+          curl -X POST -F "uploadfile=@blog-static/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip" https://spatxos.cn/upload
+      # - name: copy file via ssh password
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.HOST_USERNAME }}
+      #     password: ${{ secrets.HOST_PASSWORD }}
+      #     port: ${{ secrets.HOST_PORT }}
+      #     source: "blog-static/*"
+      #     target: "root"
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
@@ -52,7 +55,8 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }} # 服务器登录密码
           port: ${{ secrets.HOST_PORT }} # 服务器ssh端口
           script: |
-            wget https://github.com/spatxos/spatxos.github.io/releases/download/${{env.TAG_NAME}}/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip  --user-agent="Mozilla/5.0 (X11;U;Linux i686;en-US;rv:1.9.0.3) Geco/2008092416 Firefox/3.0.3" --no-check-certificate
             mkdir /root/${{secrets.BLOG_NAME}}-blog/html/
-            unzip -d /root/${{secrets.BLOG_NAME}}-blog/html/ ${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
+            unzip -d /root/${{secrets.BLOG_NAME}}-blog/html/ /root/${{secrets.BLOG_NAME}}-blog/upload/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip
             find . -name 'spatxos*v*.*.*.zip' | xargs rm
+
+      # wget https://github.com/spatxos/spatxos.github.io/releases/download/${{env.TAG_NAME}}/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip  --user-agent="Mozilla/5.0 (X11;U;Linux i686;en-US;rv:1.9.0.3) Geco/2008092416 Firefox/3.0.3" --no-check-certificate

@@ -64,7 +64,8 @@ jobs:
         run: |
             mkdir /home/runner/work/release
             ls /home/runner/work/${{secrets.blogname}}.github.io/${{secrets.blogname}}.github.io/public/
-            zip -r /home/runner/work/release/${{secrets.blogname}}.${{env.TAG_NAME}}.zip /home/runner/work/${{secrets.blogname}}.github.io/${{secrets.blogname}}.github.io/public/*
+            cd /home/runner/work/release/
+            zip -r -j ${{secrets.blogname}}.${{env.TAG_NAME}}.zip /home/runner/work/${{secrets.blogname}}.github.io/${{secrets.blogname}}.github.io/public
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
