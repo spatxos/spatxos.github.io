@@ -67,6 +67,7 @@ func getBlogList(pageindex int) {
 					tagbody = fmt.Sprintf("\"%s\"", tag)
 				}
 			}
+			fmt.Printf("\r\n tagbody:%s", tagbody)
 			var tagstr = fmt.Sprintf("[%s]", tagbody)
 			var articleBody = fmt.Sprintf("---\r\ntitle: %s\r\ndate: %s\r\nauthor: %s\r\ntags: %s\r\n---\r\n%s",
 				jsconf.BlogPost.Title,
@@ -80,6 +81,16 @@ func getBlogList(pageindex int) {
 			imgurls := reg.FindAllString(articleBody, -1)
 			for _, imgurl := range imgurls {
 				fileName := path.Base(imgurl)
+				fmt.Printf("\r\n fileName:%s", fileName)
+				downloadImage(imgurl, strconv.Itoa(jsconf.BlogPost.Id), fileName)
+				articleBody = strings.Replace(articleBody, imgurl, fmt.Sprintf("/cnblogs/%s/%s", strconv.Itoa(jsconf.BlogPost.Id), fileName), -1)
+			}
+
+			reg1, _ := regexp.Compile(`http://im.*.png`)
+			imgurls1 := reg1.FindAllString(articleBody, -1)
+			for _, imgurl := range imgurls1 {
+				fileName := path.Base(imgurl)
+				fmt.Printf("\r\n fileName:%s", fileName)
 				downloadImage(imgurl, strconv.Itoa(jsconf.BlogPost.Id), fileName)
 				articleBody = strings.Replace(articleBody, imgurl, fmt.Sprintf("/cnblogs/%s/%s", strconv.Itoa(jsconf.BlogPost.Id), fileName), -1)
 			}
