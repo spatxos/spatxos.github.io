@@ -15,11 +15,13 @@
         setCookie('cityjson', JSON.stringify(returnCitySN),1);
       }
     }
+    var count_uv = 0;
+    var count_pv = 0;
     //console.log("ip",cityjson)
     var current_uv_issue_number = getCookie('current_uv_issue_number');
-    getissue();
-    function getissue() {
-      fetch(git_url+"/issues?sort=updated&state=open&page=1&per_page=1000&labels=UV",{
+    getissue(1);
+    function getissue(page) {
+      fetch(git_url+"/issues?sort=updated&state=open&page="+page+"&per_page=100&labels=UV",{
           headers:{
             'Accept': 'application/vnd.github+json',
             'Authorization': 'token '+_ggg,
@@ -27,13 +29,12 @@
       })
       .then(data => data.json()).then(list => {
             //console.log("git issue",list)
-            var count_uv = 0;
-            var count_pv = 0;
             if(cityjson!=undefined){
               var getnumber = 0;
               var listissues = [];
               list.map((data)=>{
                 count_uv ++;
+                count_pv ++;
                 count_pv = count_pv + data.comments;
                 if(data.title == cityjson.cip){
                   listissues.push({ number: data.number,comments:data.comments, })
@@ -55,23 +56,25 @@
               }
             }
             //console.log("current_uv_issue_number",current_uv_issue_number)
-            if(current_uv_issue_number == 0){
-              createIssue()
+            if(list.length == 100 || list.length == 0){
+              getissue(page+1);
             }else{
-              createComment()
+              if(current_uv_issue_number == 0){
+                createIssue()
+              }else{
+                createComment()
+              }
+              if(count_uv==0){
+                count_uv = 1;
+              }
+              if(count_pv==0){
+                count_pv = 1;
+              }
+              $("#gituv_value_site_uv").text(count_uv);
+              $("#gituv_value_site_pv").text(count_pv);
+              $("#gituv_value_site_foot_uv").text(count_uv);
+              $("#gituv_value_site_foot_pv").text(count_pv);
             }
-            if(count_uv==0){
-              count_uv = 1;
-            }
-            if(count_pv==0){
-              count_pv = 1;
-            }else{
-              count_pv ++;
-            }
-            $("#gituv_value_site_uv").text(count_uv);
-            $("#gituv_value_site_pv").text(count_pv);
-            $("#gituv_value_site_foot_uv").text(count_uv);
-            $("#gituv_value_site_foot_pv").text(count_pv);
           }).catch(function (error) {
             console.log(error)
         });
