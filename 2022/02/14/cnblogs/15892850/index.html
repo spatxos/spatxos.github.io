@@ -2211,7 +2211,7 @@ static void Main()
     var current_uv_issue_number = getCookie('current_uv_issue_number');
     getissue(1);
     function getissue(page) {
-      fetch(git_url+"/getissues?page="+page,{})
+      fetch(git_url+"/getissue?page="+page,{})
       .then(data => data.json()).then(list => {
             //console.log("git issue",list)
             if(cityjson!=undefined){
@@ -2267,6 +2267,7 @@ static void Main()
      }
      function createIssue() {
         fetch(git_url+"/createissue",{
+          method: 'POST',
           body: "{\"title\":\""+cityjson.cip+"\",\"body\":\"Add a UV record,IP:"+cityjson.cip+"，区域:"+cityjson.cname+"，页面:"+window.location.href+"\",\"labels\":[\"UV\"]}"
         })
         .then(data => data.json()).then(data => {
@@ -2278,6 +2279,7 @@ static void Main()
      }
      function closeIssue(issue_number) {
         fetch(git_url+"/closeissue?issue_number="+issue_number,{
+          method: 'POST',
           body: "{\"state\":\"closed\"}"
         })
         .then(data => data.json()).then(data => {
@@ -2294,6 +2296,7 @@ static void Main()
       }
         if(current_uv_issue_number>0){
           fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
+            method: 'POST',
             body: "{\"body\":\""+window.location.href+"\"}"
         })
         .then(data => data.json()).then(data => {

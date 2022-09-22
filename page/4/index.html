@@ -2089,7 +2089,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Sep 22 2022 02:07:42 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Thu Sep 22 2022 05:22:48 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-09-22 日</div>
           
         </div>
@@ -3070,7 +3070,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
     var current_uv_issue_number = getCookie('current_uv_issue_number');
     getissue(1);
     function getissue(page) {
-      fetch(git_url+"/getissues?page="+page,{})
+      fetch(git_url+"/getissue?page="+page,{})
       .then(data => data.json()).then(list => {
             //console.log("git issue",list)
             if(cityjson!=undefined){
@@ -3126,6 +3126,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
      }
      function createIssue() {
         fetch(git_url+"/createissue",{
+          method: 'POST',
           body: "{\"title\":\""+cityjson.cip+"\",\"body\":\"Add a UV record,IP:"+cityjson.cip+"，区域:"+cityjson.cname+"，页面:"+window.location.href+"\",\"labels\":[\"UV\"]}"
         })
         .then(data => data.json()).then(data => {
@@ -3137,6 +3138,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
      }
      function closeIssue(issue_number) {
         fetch(git_url+"/closeissue?issue_number="+issue_number,{
+          method: 'POST',
           body: "{\"state\":\"closed\"}"
         })
         .then(data => data.json()).then(data => {
@@ -3153,6 +3155,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
       }
         if(current_uv_issue_number>0){
           fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
+            method: 'POST',
             body: "{\"body\":\""+window.location.href+"\"}"
         })
         .then(data => data.json()).then(data => {
