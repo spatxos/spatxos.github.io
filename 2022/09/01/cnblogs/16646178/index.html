@@ -1966,9 +1966,9 @@ bin&#x2F;redis-benchmark --cluster -n 1000000 -t set,get -P 16 -q -p 7000 # æµæ
   <script src="https://spatxos.cn/returncity"></script>
 
   <!-- <script data-pjax>
-    var _ggg = window.atob('Z2hwX2RYNGo2U2J6OVYyRVJESExGVERQQzFrZEdCR0dLQTFzUUFrWg==');
-    var github_name = 'spatxos';
-    var github_repo = 'spatxos.github.io';
+    var _ggg = window.atob('');
+    var github_name = '';
+    var github_repo = '';
     var isgituv_debug = 'false' === 'true';
     var git_url = 'https://api.github.com/repos/'+github_name+"/"+github_repo;
     var cityjsonstr = getCookie('cityjson');
@@ -2143,13 +2143,13 @@ bin&#x2F;redis-benchmark --cluster -n 1000000 -t set,get -P 16 -q -p 7000 # æµæ
     //console.log("ip",cityjson)
     var current_uv_issue_number = getCookie('current_uv_issue_number');
     getissue(1);
+    var getnumber = 0;
+    var listissues = [];
     function getissue(page) {
       fetch(git_url+"/getissue?page="+page,{})
       .then(data => data.json()).then(list => {
             //console.log("git issue",list)
             if(cityjson!=undefined){
-              var getnumber = 0;
-              var listissues = [];
               list.map((data)=>{
                 count_uv ++;
                 count_pv ++;
@@ -2158,6 +2158,11 @@ bin&#x2F;redis-benchmark --cluster -n 1000000 -t set,get -P 16 -q -p 7000 # æµæ
                   listissues.push({ number: data.number,comments:data.comments, })
                 }
               })
+            }
+            //console.log("current_uv_issue_number",current_uv_issue_number)
+            if(list.length == 100 || list.length == 0){
+              getissue(page+1);
+            }else{
               listissues.map((data,index)=>{
                 getnumber = data.number;
                 if(index<listissues.length-1 && data.comments == 0){
@@ -2172,11 +2177,6 @@ bin&#x2F;redis-benchmark --cluster -n 1000000 -t set,get -P 16 -q -p 7000 # æµæ
                 current_uv_issue_number = 0;
                 setCookie('current_uv_issue_number', 0,1);
               }
-            }
-            //console.log("current_uv_issue_number",current_uv_issue_number)
-            if(list.length == 100 || list.length == 0){
-              getissue(page+1);
-            }else{
               if(current_uv_issue_number == 0){
                 createIssue()
               }else{

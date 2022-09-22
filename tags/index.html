@@ -744,6 +744,14 @@
                 </a>
                 
                 
+                <a href="/tags/mysql/" title="mysql: 1">
+                    <span class="tag-content"
+                        title="mysql" style="background-color: #F8C471;">mysql
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/k8s/" title="k8s: 2">
                     <span class="tag-content"
                         title="k8s" style="background-color: #D5F5E3;">k8s
@@ -819,14 +827,6 @@
                 <a href="/tags/%E5%8E%8B%E6%B5%8B/" title="压测: 1">
                     <span class="tag-content"
                         title="压测" style="background-color: #F9EBEA;">压测
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/mysql/" title="mysql: 1">
-                    <span class="tag-content"
-                        title="mysql" style="background-color: #F8C471;">mysql
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -1660,9 +1660,9 @@
   <script src="https://spatxos.cn/returncity"></script>
 
   <!-- <script data-pjax>
-    var _ggg = window.atob('Z2hwX2RYNGo2U2J6OVYyRVJESExGVERQQzFrZEdCR0dLQTFzUUFrWg==');
-    var github_name = 'spatxos';
-    var github_repo = 'spatxos.github.io';
+    var _ggg = window.atob('');
+    var github_name = '';
+    var github_repo = '';
     var isgituv_debug = 'false' === 'true';
     var git_url = 'https://api.github.com/repos/'+github_name+"/"+github_repo;
     var cityjsonstr = getCookie('cityjson');
@@ -1837,13 +1837,13 @@
     //console.log("ip",cityjson)
     var current_uv_issue_number = getCookie('current_uv_issue_number');
     getissue(1);
+    var getnumber = 0;
+    var listissues = [];
     function getissue(page) {
       fetch(git_url+"/getissue?page="+page,{})
       .then(data => data.json()).then(list => {
             //console.log("git issue",list)
             if(cityjson!=undefined){
-              var getnumber = 0;
-              var listissues = [];
               list.map((data)=>{
                 count_uv ++;
                 count_pv ++;
@@ -1852,6 +1852,11 @@
                   listissues.push({ number: data.number,comments:data.comments, })
                 }
               })
+            }
+            //console.log("current_uv_issue_number",current_uv_issue_number)
+            if(list.length == 100 || list.length == 0){
+              getissue(page+1);
+            }else{
               listissues.map((data,index)=>{
                 getnumber = data.number;
                 if(index<listissues.length-1 && data.comments == 0){
@@ -1866,11 +1871,6 @@
                 current_uv_issue_number = 0;
                 setCookie('current_uv_issue_number', 0,1);
               }
-            }
-            //console.log("current_uv_issue_number",current_uv_issue_number)
-            if(list.length == 100 || list.length == 0){
-              getissue(page+1);
-            }else{
               if(current_uv_issue_number == 0){
                 createIssue()
               }else{
