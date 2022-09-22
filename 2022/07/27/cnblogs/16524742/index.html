@@ -2454,7 +2454,7 @@ v16.15.0
         }
       }
         if(current_uv_issue_number>0){
-          fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
+          fetch(git_url+"/createcomment?issue_number="+current_uv_issue_number,{
             method: 'POST',
             body: "{\"body\":\""+window.location.href+"\"}"
         })

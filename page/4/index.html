@@ -2089,7 +2089,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Sep 22 2022 06:10:52 GMT+0000 (Coordinated Universal Time)</div>
+            <div id="last-update" style="display: none;">Thu Sep 22 2022 06:23:14 GMT+0000 (Coordinated Universal Time)</div>
             <div id="last-update-show">2022-09-22 日</div>
           
         </div>
@@ -3154,7 +3154,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
         }
       }
         if(current_uv_issue_number>0){
-          fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
+          fetch(git_url+"/createcomment?issue_number="+current_uv_issue_number,{
             method: 'POST',
             body: "{\"body\":\""+window.location.href+"\"}"
         })

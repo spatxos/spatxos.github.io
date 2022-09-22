@@ -2149,7 +2149,7 @@ go run main.go -c 1 -n 100 -u https:&#x2F;&#x2F;www.baidu.com&#x2F;<span aria-hi
         }
       }
         if(current_uv_issue_number>0){
-          fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
+          fetch(git_url+"/createcomment?issue_number="+current_uv_issue_number,{
             method: 'POST',
             body: "{\"body\":\""+window.location.href+"\"}"
         })

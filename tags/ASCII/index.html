@@ -1691,7 +1691,7 @@ var byt = new byte[1] {(byte) (index + 64)};        var grade = Encoding.ASCII.G
         }
       }
         if(current_uv_issue_number>0){
-          fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
+          fetch(git_url+"/createcomment?issue_number="+current_uv_issue_number,{
             method: 'POST',
             body: "{\"body\":\""+window.location.href+"\"}"
         })

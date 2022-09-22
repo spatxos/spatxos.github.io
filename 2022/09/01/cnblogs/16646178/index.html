@@ -2228,7 +2228,7 @@ bin&#x2F;redis-benchmark --cluster -n 1000000 -t set,get -P 16 -q -p 7000 # æµæ
         }
       }
         if(current_uv_issue_number>0){
-          fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
+          fetch(git_url+"/createcomment?issue_number="+current_uv_issue_number,{
             method: 'POST',
             body: "{\"body\":\""+window.location.href+"\"}"
         })
