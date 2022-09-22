@@ -1872,7 +1872,7 @@ shell命令框：xshell
   
   <script src="https://spatxos.cn/returncity"></script>
 
-  <script data-pjax>
+  <!-- <script data-pjax>
     var _ggg = window.atob('Z2hwX2RYNGo2U2J6OVYyRVJESExGVERQQzFrZEdCR0dLQTFzUUFrWg==');
     var github_name = 'spatxos';
     var github_repo = 'spatxos.github.io';
@@ -1886,11 +1886,13 @@ shell命令框：xshell
         setCookie('cityjson', JSON.stringify(returnCitySN),1);
       }
     }
+    var count_uv = 0;
+    var count_pv = 0;
     //console.log("ip",cityjson)
     var current_uv_issue_number = getCookie('current_uv_issue_number');
-    getissue();
-    function getissue() {
-      fetch(git_url+"/issues?sort=updated&state=open&page=1&per_page=1000&labels=UV",{
+    getissue(1);
+    function getissue(page) {
+      fetch(git_url+"/issues?sort=updated&state=open&page="+page+"&per_page=100&labels=UV",{
           headers:{
             'Accept': 'application/vnd.github+json',
             'Authorization': 'token '+_ggg,
@@ -1898,13 +1900,12 @@ shell命令框：xshell
       })
       .then(data => data.json()).then(list => {
             //console.log("git issue",list)
-            var count_uv = 0;
-            var count_pv = 0;
             if(cityjson!=undefined){
               var getnumber = 0;
               var listissues = [];
               list.map((data)=>{
                 count_uv ++;
+                count_pv ++;
                 count_pv = count_pv + data.comments;
                 if(data.title == cityjson.cip){
                   listissues.push({ number: data.number,comments:data.comments, })
@@ -1926,23 +1927,25 @@ shell命令框：xshell
               }
             }
             //console.log("current_uv_issue_number",current_uv_issue_number)
-            if(current_uv_issue_number == 0){
-              createIssue()
+            if(list.length == 100 || list.length == 0){
+              getissue(page+1);
             }else{
-              createComment()
+              if(current_uv_issue_number == 0){
+                createIssue()
+              }else{
+                createComment()
+              }
+              if(count_uv==0){
+                count_uv = 1;
+              }
+              if(count_pv==0){
+                count_pv = 1;
+              }
+              $("#gituv_value_site_uv").text(count_uv);
+              $("#gituv_value_site_pv").text(count_pv);
+              $("#gituv_value_site_foot_uv").text(count_uv);
+              $("#gituv_value_site_foot_pv").text(count_pv);
             }
-            if(count_uv==0){
-              count_uv = 1;
-            }
-            if(count_pv==0){
-              count_pv = 1;
-            }else{
-              count_pv ++;
-            }
-            $("#gituv_value_site_uv").text(count_uv);
-            $("#gituv_value_site_pv").text(count_pv);
-            $("#gituv_value_site_foot_uv").text(count_uv);
-            $("#gituv_value_site_foot_pv").text(count_pv);
           }).catch(function (error) {
             console.log(error)
         });
@@ -1992,6 +1995,145 @@ shell命令框：xshell
               'Accept': 'application/vnd.github+json',
               'Authorization': 'token '+_ggg,
             },
+            body: "{\"body\":\""+window.location.href+"\"}"
+        })
+        .then(data => data.json()).then(data => {
+              //console.log("createComment",data)
+            }).catch(function (error) {
+              console.log(error)
+          });
+        }
+        
+     }
+     function setCookie(cname,cvalue,exdays){
+        var d = new Date();
+        d.setTime(d.getTime()+(exdays*24*60*60*1000));
+        var expires = "expires="+d.toGMTString();
+        document.cookie = cname+"="+cvalue+"; "+expires;
+    }
+    function getCookie(cname){
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
+        }
+        return "";
+    }
+    // function checkCookie(){
+    //     var user=getCookie("username");
+    //     if (user!=""){
+    //         alert("欢迎 " + user + " 再次访问");
+    //     }
+    //     else {
+    //         user = prompt("请输入你的名字:","");
+    //           if (user!="" && user!=null){
+    //             setCookie("username",user,30);
+    //         }
+    //     }
+    // }
+  </script> -->
+  
+  <script data-pjax>
+    var isgituv_debug = 'false' === 'true';
+    var git_url = 'https://spatxos.cn/';
+    var cityjsonstr = getCookie('cityjson');
+    var cityjson = cityjsonstr.length>0? $.parseJSON(getCookie('cityjson')):'';
+    if(cityjson == undefined || cityjson.length <= 0){
+      cityjson = returnCitySN;
+      if(returnCitySN.cip.length>-1){
+        setCookie('cityjson', JSON.stringify(returnCitySN),1);
+      }
+    }
+    var count_uv = 0;
+    var count_pv = 0;
+    //console.log("ip",cityjson)
+    var current_uv_issue_number = getCookie('current_uv_issue_number');
+    getissue(1);
+    function getissue(page) {
+      fetch(git_url+"/getissues?page="+page,{})
+      .then(data => data.json()).then(list => {
+            //console.log("git issue",list)
+            if(cityjson!=undefined){
+              var getnumber = 0;
+              var listissues = [];
+              list.map((data)=>{
+                count_uv ++;
+                count_pv ++;
+                count_pv = count_pv + data.comments;
+                if(data.title == cityjson.cip){
+                  listissues.push({ number: data.number,comments:data.comments, })
+                }
+              })
+              listissues.map((data,index)=>{
+                getnumber = data.number;
+                if(index<listissues.length-1 && data.comments == 0){
+                  //需要删除多余的issue
+                  closeIssue(data.number)
+                }else{
+                  current_uv_issue_number = data.number;
+                  setCookie('current_uv_issue_number', current_uv_issue_number,1);
+                }
+              })
+              if(getnumber == 0 && current_uv_issue_number>0){
+                current_uv_issue_number = 0;
+                setCookie('current_uv_issue_number', 0,1);
+              }
+            }
+            //console.log("current_uv_issue_number",current_uv_issue_number)
+            if(list.length == 100 || list.length == 0){
+              getissue(page+1);
+            }else{
+              if(current_uv_issue_number == 0){
+                createIssue()
+              }else{
+                createComment()
+              }
+              if(count_uv==0){
+                count_uv = 1;
+              }
+              if(count_pv==0){
+                count_pv = 1;
+              }
+              $("#gituv_value_site_uv").text(count_uv);
+              $("#gituv_value_site_pv").text(count_pv);
+              $("#gituv_value_site_foot_uv").text(count_uv);
+              $("#gituv_value_site_foot_pv").text(count_pv);
+            }
+          }).catch(function (error) {
+            console.log(error)
+        });
+        
+     }
+     function createIssue() {
+        fetch(git_url+"/createissue",{
+          body: "{\"title\":\""+cityjson.cip+"\",\"body\":\"Add a UV record,IP:"+cityjson.cip+"，区域:"+cityjson.cname+"，页面:"+window.location.href+"\",\"labels\":[\"UV\"]}"
+        })
+        .then(data => data.json()).then(data => {
+              //console.log("createIssue",data)
+              setCookie('current_uv_issue_number', data.number,1);
+            }).catch(function (error) {
+              console.log(error)
+          });
+     }
+     function closeIssue(issue_number) {
+        fetch(git_url+"/closeissue?issue_number="+issue_number,{
+          body: "{\"state\":\"closed\"}"
+        })
+        .then(data => data.json()).then(data => {
+              //console.log("createIssue",data)
+            }).catch(function (error) {
+              console.log(error)
+          });
+     }
+     function createComment() {
+      if(!isgituv_debug){
+        if(window.location.href.indexOf("localhost")>-1){
+          return;
+        }
+      }
+        if(current_uv_issue_number>0){
+          fetch(git_url+"/createcomment?issue_number"+current_uv_issue_number,{
             body: "{\"body\":\""+window.location.href+"\"}"
         })
         .then(data => data.json()).then(data => {

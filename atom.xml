@@ -6,7 +6,7 @@
   <link href="http://spatxos.cn/atom.xml" rel="self"/>
   
   <link href="http://spatxos.cn/"/>
-  <updated>2022-08-11T05:51:47.767Z</updated>
+  <updated>2022-09-22T02:07:09.857Z</updated>
   <id>http://spatxos.cn/</id>
   
   <author>
@@ -17,11 +17,77 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>苹果手机使用altstore免越狱安装第三方应用</title>
+    <link href="http://spatxos.cn/2022/09/21/cnblogs/16708226/"/>
+    <id>http://spatxos.cn/2022/09/21/cnblogs/16708226/</id>
+    <published>2022-09-21T08:43:00.000Z</published>
+    <updated>2022-09-22T02:07:09.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;转自&lt;a href=&quot;https://www.52pojie.cn/thread-1032418-1-1.html&quot;&gt;52pojie&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>dotnet诊断工具记录</title>
+    <link href="http://spatxos.cn/2022/09/07/cnblogs/16664334/"/>
+    <id>http://spatxos.cn/2022/09/07/cnblogs/16664334/</id>
+    <published>2022-09-07T02:06:00.000Z</published>
+    <updated>2022-09-22T02:07:09.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;dotnet-counters&quot;&gt;&lt;a href=&quot;#dotnet-counters&quot; class=&quot;headerlink&quot; title=&quot;dotnet-counters&quot;&gt;&lt;/a&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ubuntu redis 集群配置</title>
+    <link href="http://spatxos.cn/2022/09/01/cnblogs/16646178/"/>
+    <id>http://spatxos.cn/2022/09/01/cnblogs/16646178/</id>
+    <published>2022-09-01T07:21:00.000Z</published>
+    <updated>2022-09-22T02:07:09.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1-下载并编译redis&quot;&gt;&lt;a href=&quot;#1-下载并编译redis&quot; class=&quot;headerlink&quot; title=&quot;1.下载并编译redis&quot;&gt;&lt;/a&gt;1.下载并编译redis&lt;/h1&gt;&lt;p&gt;  去&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="redis集群" scheme="http://spatxos.cn/tags/redis%E9%9B%86%E7%BE%A4/"/>
+    
+  </entry>
+  
+  <entry>
     <title>简单交叉编译学习</title>
     <link href="http://spatxos.cn/2022/08/02/cnblogs/16544176/"/>
     <id>http://spatxos.cn/2022/08/02/cnblogs/16544176/</id>
     <published>2022-08-02T08:19:00.000Z</published>
-    <updated>2022-08-11T05:51:47.767Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -44,7 +110,7 @@
     <link href="http://spatxos.cn/2022/07/27/cnblogs/16524742/"/>
     <id>http://spatxos.cn/2022/07/27/cnblogs/16524742/</id>
     <published>2022-07-27T08:05:00.000Z</published>
-    <updated>2022-08-11T05:51:47.767Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -71,7 +137,7 @@
     <link href="http://spatxos.cn/2022/07/15/cnblogs/16478352/"/>
     <id>http://spatxos.cn/2022/07/15/cnblogs/16478352/</id>
     <published>2022-07-15T07:31:00.000Z</published>
-    <updated>2022-08-11T05:51:47.767Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -101,7 +167,7 @@
     <link href="http://spatxos.cn/2022/07/10/cnblogs/16463506/"/>
     <id>http://spatxos.cn/2022/07/10/cnblogs/16463506/</id>
     <published>2022-07-10T09:08:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -129,7 +195,7 @@
     <link href="http://spatxos.cn/2022/07/07/shi-yong-hexo-admin/"/>
     <id>http://spatxos.cn/2022/07/07/shi-yong-hexo-admin/</id>
     <published>2022-07-07T04:17:04.000Z</published>
-    <updated>2022-08-11T05:51:47.767Z</updated>
+    <updated>2022-09-22T02:07:09.861Z</updated>
     
     
       
@@ -157,7 +223,7 @@
     <link href="http://spatxos.cn/2022/05/19/cnblogs/16284709/"/>
     <id>http://spatxos.cn/2022/05/19/cnblogs/16284709/</id>
     <published>2022-05-19T07:50:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -190,7 +256,7 @@
     <link href="http://spatxos.cn/2022/02/28/cnblogs/15944641/"/>
     <id>http://spatxos.cn/2022/02/28/cnblogs/15944641/</id>
     <published>2022-02-28T02:52:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -212,7 +278,7 @@
     <link href="http://spatxos.cn/2022/02/26/cnblogs/15939761/"/>
     <id>http://spatxos.cn/2022/02/26/cnblogs/15939761/</id>
     <published>2022-02-26T08:56:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -239,7 +305,7 @@
     <link href="http://spatxos.cn/2022/02/14/cnblogs/15892850/"/>
     <id>http://spatxos.cn/2022/02/14/cnblogs/15892850/</id>
     <published>2022-02-14T07:54:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -260,7 +326,7 @@
     <link href="http://spatxos.cn/2021/12/15/cnblogs/15692108/"/>
     <id>http://spatxos.cn/2021/12/15/cnblogs/15692108/</id>
     <published>2021-12-15T04:36:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -287,7 +353,7 @@
     <link href="http://spatxos.cn/2021/11/27/cnblogs/15614177/"/>
     <id>http://spatxos.cn/2021/11/27/cnblogs/15614177/</id>
     <published>2021-11-27T17:29:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -312,7 +378,7 @@
     <link href="http://spatxos.cn/2021/11/27/cnblogs/15193971/"/>
     <id>http://spatxos.cn/2021/11/27/cnblogs/15193971/</id>
     <published>2021-11-27T17:27:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -337,7 +403,7 @@
     <link href="http://spatxos.cn/2021/11/27/cnblogs/15614159/"/>
     <id>http://spatxos.cn/2021/11/27/cnblogs/15614159/</id>
     <published>2021-11-27T17:05:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -366,7 +432,7 @@
     <link href="http://spatxos.cn/2021/11/18/cnblogs/15571172/"/>
     <id>http://spatxos.cn/2021/11/18/cnblogs/15571172/</id>
     <published>2021-11-18T02:40:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -390,7 +456,7 @@
     <link href="http://spatxos.cn/2021/02/03/cnblogs/14366411/"/>
     <id>http://spatxos.cn/2021/02/03/cnblogs/14366411/</id>
     <published>2021-02-03T05:05:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -412,7 +478,7 @@
     <link href="http://spatxos.cn/2020/09/01/cnblogs/13596927/"/>
     <id>http://spatxos.cn/2020/09/01/cnblogs/13596927/</id>
     <published>2020-09-01T08:30:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -440,7 +506,7 @@
     <link href="http://spatxos.cn/2020/06/13/cnblogs/13096427/"/>
     <id>http://spatxos.cn/2020/06/13/cnblogs/13096427/</id>
     <published>2020-06-13T10:16:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
+    <updated>2022-09-22T02:07:09.857Z</updated>
     
     
       
@@ -459,84 +525,6 @@
     <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
     
     <category term="abp" scheme="http://spatxos.cn/tags/abp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>.net core3.1 abp动态菜单和动态权限（思路）  （二）</title>
-    <link href="http://spatxos.cn/2020/06/12/cnblogs/13089690/"/>
-    <id>http://spatxos.cn/2020/06/12/cnblogs/13089690/</id>
-    <published>2020-06-12T03:57:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;ps：本文需要先把abp的源码下载一份来下，跟着一起找实现，更容易懂&lt;/p&gt;
-&lt;p&gt;在abp中，对于权限和菜单使用静态来管理，菜单的加载是在登陆页面的地方（具体是怎么知道的，浏览器按F12，然后去sources中去找）&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    
-    <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
-    
-    <category term="abp" scheme="http://spatxos.cn/tags/abp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>.net core3.1 abp学习开始（一）</title>
-    <link href="http://spatxos.cn/2020/06/09/cnblogs/13081247/"/>
-    <id>http://spatxos.cn/2020/06/09/cnblogs/13081247/</id>
-    <published>2020-06-09T14:11:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;vs版本 2019，链接数据库使用Navicat，数据库MySql&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;abp的官网：&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
-    
-    <category term="abp" scheme="http://spatxos.cn/tags/abp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>api.versioning 版本控制 自动识别最高版本和多Area但同名Contoller问题解决办法</title>
-    <link href="http://spatxos.cn/2020/06/03/cnblogs/13040338/"/>
-    <id>http://spatxos.cn/2020/06/03/cnblogs/13040338/</id>
-    <published>2020-06-03T14:02:00.000Z</published>
-    <updated>2022-08-11T05:51:47.763Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;div class=&quot;cnblogs_code&quot;&gt;
-&lt;pre&gt;Microsoft.AspNetCore.Mvc.Versioning //引入程序集&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;.net core 下面api的版本控制作用不需要多说，可以查阅&lt;a</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
