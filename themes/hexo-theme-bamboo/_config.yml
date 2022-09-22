@@ -220,9 +220,6 @@ busuanzi:
 # 统计网站访问数量，使用github存入issues方式，需要提前申请github的token，设置只针对repo的操作权限，只勾选public_repo和security_events
 gituv:
   on: true # 关闭会导致侧边栏的UV PV无法加载出来
-  github_token: 'Z2hwX2RYNGo2U2J6OVYyRVJESExGVERQQzFrZEdCR0dLQTFzUUFrWg==' # 拿到的githubtoken使用window.btoa(github_token)进行一次加密，防止直接显示在js
-  github_name: 'spatxos'
-  github_repo: 'spatxos.github.io'
   isdebug: false
 
 # 标签页和分类页中，显示这个标签或者分类在文章中出现的次数
