@@ -2160,7 +2160,7 @@ bin&#x2F;redis-benchmark --cluster -n 1000000 -t set,get -P 16 -q -p 7000 # æµæ
               })
             }
             //console.log("current_uv_issue_number",current_uv_issue_number)
-            if(list.length == 100 || list.length == 0){
+            if(list.length >= 100){
               getissue(page+1);
             }else{
               listissues.map((data,index)=>{

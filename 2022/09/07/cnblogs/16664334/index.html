@@ -2087,7 +2087,7 @@ dotnet-sos install # 将会输出sos.dll路径
               })
             }
             //console.log("current_uv_issue_number",current_uv_issue_number)
-            if(list.length == 100 || list.length == 0){
+            if(list.length >= 100){
               getissue(page+1);
             }else{
               listissues.map((data,index)=>{

@@ -2081,7 +2081,7 @@ go run main.go -c 1 -n 100 -u https:&#x2F;&#x2F;www.baidu.com&#x2F;<span aria-hi
               })
             }
             //console.log("current_uv_issue_number",current_uv_issue_number)
-            if(list.length == 100 || list.length == 0){
+            if(list.length >= 100){
               getissue(page+1);
             }else{
               listissues.map((data,index)=>{
