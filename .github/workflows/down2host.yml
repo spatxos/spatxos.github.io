@@ -37,7 +37,7 @@ jobs:
         run: ls blog-static
       - name: post zip
         run: |
-          curl -X POST -F "uploadfile=@blog-static/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip" https://spatxos.cn/upload
+          curl -X POST -F "uploadfile=@blog-static/${{secrets.BLOG_NAME}}.${{env.TAG_NAME}}.zip" https://www.spatxos.cn/upload
       # - name: copy file via ssh password
       #   uses: appleboy/scp-action@master
       #   with:
