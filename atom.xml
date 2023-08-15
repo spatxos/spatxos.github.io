@@ -3,11 +3,11 @@
   <title>spatxos | 小白的学习笔记</title>
   
   
-  <link href="http://spatxos.cn/atom.xml" rel="self"/>
+  <link href="https://www.spatxos.cn/atom.xml" rel="self"/>
   
-  <link href="http://spatxos.cn/"/>
-  <updated>2022-11-17T06:15:23.363Z</updated>
-  <id>http://spatxos.cn/</id>
+  <link href="https://www.spatxos.cn/"/>
+  <updated>2023-08-15T06:40:17.247Z</updated>
+  <id>https://www.spatxos.cn/</id>
   
   <author>
     <name>spatxos</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>苹果手机使用altstore免越狱安装第三方应用</title>
-    <link href="http://spatxos.cn/2022/09/21/cnblogs/16708226/"/>
-    <id>http://spatxos.cn/2022/09/21/cnblogs/16708226/</id>
+    <link href="https://www.spatxos.cn/2022/09/21/cnblogs/16708226/"/>
+    <id>https://www.spatxos.cn/2022/09/21/cnblogs/16708226/</id>
     <published>2022-09-21T08:43:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -40,10 +40,10 @@
   
   <entry>
     <title>dotnet诊断工具记录</title>
-    <link href="http://spatxos.cn/2022/09/07/cnblogs/16664334/"/>
-    <id>http://spatxos.cn/2022/09/07/cnblogs/16664334/</id>
+    <link href="https://www.spatxos.cn/2022/09/07/cnblogs/16664334/"/>
+    <id>https://www.spatxos.cn/2022/09/07/cnblogs/16664334/</id>
     <published>2022-09-07T02:06:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -61,10 +61,10 @@
   
   <entry>
     <title>ubuntu redis 集群配置</title>
-    <link href="http://spatxos.cn/2022/09/01/cnblogs/16646178/"/>
-    <id>http://spatxos.cn/2022/09/01/cnblogs/16646178/</id>
+    <link href="https://www.spatxos.cn/2022/09/01/cnblogs/16646178/"/>
+    <id>https://www.spatxos.cn/2022/09/01/cnblogs/16646178/</id>
     <published>2022-09-01T07:21:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -78,16 +78,16 @@
     
     
     
-    <category term="redis集群" scheme="http://spatxos.cn/tags/redis%E9%9B%86%E7%BE%A4/"/>
+    <category term="redis集群" scheme="https://www.spatxos.cn/tags/redis%E9%9B%86%E7%BE%A4/"/>
     
   </entry>
   
   <entry>
     <title>简单交叉编译学习</title>
-    <link href="http://spatxos.cn/2022/08/02/cnblogs/16544176/"/>
-    <id>http://spatxos.cn/2022/08/02/cnblogs/16544176/</id>
+    <link href="https://www.spatxos.cn/2022/08/02/cnblogs/16544176/"/>
+    <id>https://www.spatxos.cn/2022/08/02/cnblogs/16544176/</id>
     <published>2022-08-02T08:19:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -101,16 +101,16 @@
     
     
     
-    <category term="交叉编译" scheme="http://spatxos.cn/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
+    <category term="交叉编译" scheme="https://www.spatxos.cn/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/"/>
     
   </entry>
   
   <entry>
     <title>go-zero单体服务使用泛型简化注册Handler路由</title>
-    <link href="http://spatxos.cn/2022/07/27/cnblogs/16524742/"/>
-    <id>http://spatxos.cn/2022/07/27/cnblogs/16524742/</id>
+    <link href="https://www.spatxos.cn/2022/07/27/cnblogs/16524742/"/>
+    <id>https://www.spatxos.cn/2022/07/27/cnblogs/16524742/</id>
     <published>2022-07-27T08:05:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -124,20 +124,20 @@
     
     
     
-    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    <category term="go" scheme="https://www.spatxos.cn/tags/go/"/>
     
-    <category term="go-zero" scheme="http://spatxos.cn/tags/go-zero/"/>
+    <category term="go-zero" scheme="https://www.spatxos.cn/tags/go-zero/"/>
     
-    <category term="go泛型" scheme="http://spatxos.cn/tags/go%E6%B3%9B%E5%9E%8B/"/>
+    <category term="go泛型" scheme="https://www.spatxos.cn/tags/go%E6%B3%9B%E5%9E%8B/"/>
     
   </entry>
   
   <entry>
     <title>使用github action发布hexo博客到云服务器</title>
-    <link href="http://spatxos.cn/2022/07/15/cnblogs/16478352/"/>
-    <id>http://spatxos.cn/2022/07/15/cnblogs/16478352/</id>
+    <link href="https://www.spatxos.cn/2022/07/15/cnblogs/16478352/"/>
+    <id>https://www.spatxos.cn/2022/07/15/cnblogs/16478352/</id>
     <published>2022-07-15T07:31:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -152,22 +152,22 @@
     
     
     
-    <category term="hexo" scheme="http://spatxos.cn/tags/hexo/"/>
+    <category term="hexo" scheme="https://www.spatxos.cn/tags/hexo/"/>
     
-    <category term="docker" scheme="http://spatxos.cn/tags/docker/"/>
+    <category term="docker" scheme="https://www.spatxos.cn/tags/docker/"/>
     
-    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    <category term="go" scheme="https://www.spatxos.cn/tags/go/"/>
     
-    <category term="github action" scheme="http://spatxos.cn/tags/github-action/"/>
+    <category term="github action" scheme="https://www.spatxos.cn/tags/github-action/"/>
     
   </entry>
   
   <entry>
     <title>用go把博客园博客下载到本地Hexo目录下</title>
-    <link href="http://spatxos.cn/2022/07/10/cnblogs/16463506/"/>
-    <id>http://spatxos.cn/2022/07/10/cnblogs/16463506/</id>
+    <link href="https://www.spatxos.cn/2022/07/10/cnblogs/16463506/"/>
+    <id>https://www.spatxos.cn/2022/07/10/cnblogs/16463506/</id>
     <published>2022-07-10T09:08:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -182,20 +182,20 @@
     
     
     
-    <category term="hexo" scheme="http://spatxos.cn/tags/hexo/"/>
+    <category term="hexo" scheme="https://www.spatxos.cn/tags/hexo/"/>
     
-    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    <category term="go" scheme="https://www.spatxos.cn/tags/go/"/>
     
-    <category term="go文件下载" scheme="http://spatxos.cn/tags/go%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
+    <category term="go文件下载" scheme="https://www.spatxos.cn/tags/go%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
     
   </entry>
   
   <entry>
     <title>使用hexo admin</title>
-    <link href="http://spatxos.cn/2022/07/07/shi-yong-hexo-admin/"/>
-    <id>http://spatxos.cn/2022/07/07/shi-yong-hexo-admin/</id>
+    <link href="https://www.spatxos.cn/2022/07/07/shi-yong-hexo-admin/"/>
+    <id>https://www.spatxos.cn/2022/07/07/shi-yong-hexo-admin/</id>
     <published>2022-07-07T04:17:04.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -209,21 +209,21 @@
     
     
     
-    <category term="前端" scheme="http://spatxos.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://www.spatxos.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="hexo" scheme="http://spatxos.cn/tags/hexo/"/>
+    <category term="hexo" scheme="https://www.spatxos.cn/tags/hexo/"/>
     
-    <category term="hexo-admin" scheme="http://spatxos.cn/tags/hexo-admin/"/>
+    <category term="hexo-admin" scheme="https://www.spatxos.cn/tags/hexo-admin/"/>
     
   </entry>
   
   <entry>
     <title>群晖下 gitea+drone+harbor实现CI/CD 发布到云服务器</title>
-    <link href="http://spatxos.cn/2022/05/19/cnblogs/16284709/"/>
-    <id>http://spatxos.cn/2022/05/19/cnblogs/16284709/</id>
+    <link href="https://www.spatxos.cn/2022/05/19/cnblogs/16284709/"/>
+    <id>https://www.spatxos.cn/2022/05/19/cnblogs/16284709/</id>
     <published>2022-05-19T07:50:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -237,26 +237,26 @@
     
     
     
-    <category term="docker" scheme="http://spatxos.cn/tags/docker/"/>
+    <category term="docker" scheme="https://www.spatxos.cn/tags/docker/"/>
     
-    <category term="gitea" scheme="http://spatxos.cn/tags/gitea/"/>
+    <category term="gitea" scheme="https://www.spatxos.cn/tags/gitea/"/>
     
-    <category term="drone" scheme="http://spatxos.cn/tags/drone/"/>
+    <category term="drone" scheme="https://www.spatxos.cn/tags/drone/"/>
     
-    <category term="harbor" scheme="http://spatxos.cn/tags/harbor/"/>
+    <category term="harbor" scheme="https://www.spatxos.cn/tags/harbor/"/>
     
-    <category term="群晖" scheme="http://spatxos.cn/tags/%E7%BE%A4%E6%99%96/"/>
+    <category term="群晖" scheme="https://www.spatxos.cn/tags/%E7%BE%A4%E6%99%96/"/>
     
-    <category term=".net6" scheme="http://spatxos.cn/tags/net6/"/>
+    <category term=".net6" scheme="https://www.spatxos.cn/tags/net6/"/>
     
   </entry>
   
   <entry>
     <title>oracle删除超过N天数据脚本</title>
-    <link href="http://spatxos.cn/2022/02/28/cnblogs/15944641/"/>
-    <id>http://spatxos.cn/2022/02/28/cnblogs/15944641/</id>
+    <link href="https://www.spatxos.cn/2022/02/28/cnblogs/15944641/"/>
+    <id>https://www.spatxos.cn/2022/02/28/cnblogs/15944641/</id>
     <published>2022-02-28T02:52:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -275,10 +275,10 @@
   
   <entry>
     <title>CentOS单机安装k8s并部署.NET 6程序 压测 记录</title>
-    <link href="http://spatxos.cn/2022/02/26/cnblogs/15939761/"/>
-    <id>http://spatxos.cn/2022/02/26/cnblogs/15939761/</id>
+    <link href="https://www.spatxos.cn/2022/02/26/cnblogs/15939761/"/>
+    <id>https://www.spatxos.cn/2022/02/26/cnblogs/15939761/</id>
     <published>2022-02-26T08:56:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -292,20 +292,20 @@
     
     
     
-    <category term="docker" scheme="http://spatxos.cn/tags/docker/"/>
+    <category term="docker" scheme="https://www.spatxos.cn/tags/docker/"/>
     
-    <category term="k8s" scheme="http://spatxos.cn/tags/k8s/"/>
+    <category term="k8s" scheme="https://www.spatxos.cn/tags/k8s/"/>
     
-    <category term="压测" scheme="http://spatxos.cn/tags/%E5%8E%8B%E6%B5%8B/"/>
+    <category term="压测" scheme="https://www.spatxos.cn/tags/%E5%8E%8B%E6%B5%8B/"/>
     
   </entry>
   
   <entry>
     <title>ABCD四个顺序执行方法，拓展性延申</title>
-    <link href="http://spatxos.cn/2022/02/14/cnblogs/15892850/"/>
-    <id>http://spatxos.cn/2022/02/14/cnblogs/15892850/</id>
+    <link href="https://www.spatxos.cn/2022/02/14/cnblogs/15892850/"/>
+    <id>https://www.spatxos.cn/2022/02/14/cnblogs/15892850/</id>
     <published>2022-02-14T07:54:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -323,10 +323,10 @@
   
   <entry>
     <title>不同云服务器下，ubuntu下开k3s集群</title>
-    <link href="http://spatxos.cn/2021/12/15/cnblogs/15692108/"/>
-    <id>http://spatxos.cn/2021/12/15/cnblogs/15692108/</id>
+    <link href="https://www.spatxos.cn/2021/12/15/cnblogs/15692108/"/>
+    <id>https://www.spatxos.cn/2021/12/15/cnblogs/15692108/</id>
     <published>2021-12-15T04:36:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.247Z</updated>
     
     
       
@@ -340,20 +340,20 @@
     
     
     
-    <category term="k3s" scheme="http://spatxos.cn/tags/k3s/"/>
+    <category term="k3s" scheme="https://www.spatxos.cn/tags/k3s/"/>
     
-    <category term="ubuntu" scheme="http://spatxos.cn/tags/ubuntu/"/>
+    <category term="ubuntu" scheme="https://www.spatxos.cn/tags/ubuntu/"/>
     
-    <category term="ubuntu内核升级" scheme="http://spatxos.cn/tags/ubuntu%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/"/>
+    <category term="ubuntu内核升级" scheme="https://www.spatxos.cn/tags/ubuntu%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
     <title>go将青龙面板里面的脚本文件都下载到本地</title>
-    <link href="http://spatxos.cn/2021/11/27/cnblogs/15614177/"/>
-    <id>http://spatxos.cn/2021/11/27/cnblogs/15614177/</id>
+    <link href="https://www.spatxos.cn/2021/11/27/cnblogs/15614177/"/>
+    <id>https://www.spatxos.cn/2021/11/27/cnblogs/15614177/</id>
     <published>2021-11-27T17:29:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.243Z</updated>
     
     
       
@@ -367,18 +367,18 @@
     
     
     
-    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    <category term="go" scheme="https://www.spatxos.cn/tags/go/"/>
     
-    <category term="go文件下载" scheme="http://spatxos.cn/tags/go%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
+    <category term="go文件下载" scheme="https://www.spatxos.cn/tags/go%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
     
   </entry>
   
   <entry>
     <title>搭建一个完整的K8S集群-------基于CentOS 8系统</title>
-    <link href="http://spatxos.cn/2021/11/27/cnblogs/15193971/"/>
-    <id>http://spatxos.cn/2021/11/27/cnblogs/15193971/</id>
+    <link href="https://www.spatxos.cn/2021/11/27/cnblogs/15193971/"/>
+    <id>https://www.spatxos.cn/2021/11/27/cnblogs/15193971/</id>
     <published>2021-11-27T17:27:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.243Z</updated>
     
     
       
@@ -394,16 +394,16 @@
     
     
     
-    <category term="k8s" scheme="http://spatxos.cn/tags/k8s/"/>
+    <category term="k8s" scheme="https://www.spatxos.cn/tags/k8s/"/>
     
   </entry>
   
   <entry>
     <title>go更新腾讯云DNSPod的解析记录</title>
-    <link href="http://spatxos.cn/2021/11/27/cnblogs/15614159/"/>
-    <id>http://spatxos.cn/2021/11/27/cnblogs/15614159/</id>
+    <link href="https://www.spatxos.cn/2021/11/27/cnblogs/15614159/"/>
+    <id>https://www.spatxos.cn/2021/11/27/cnblogs/15614159/</id>
     <published>2021-11-27T17:05:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.243Z</updated>
     
     
       
@@ -419,20 +419,20 @@
     
     
     
-    <category term="go" scheme="http://spatxos.cn/tags/go/"/>
+    <category term="go" scheme="https://www.spatxos.cn/tags/go/"/>
     
-    <category term="dnspod" scheme="http://spatxos.cn/tags/dnspod/"/>
+    <category term="dnspod" scheme="https://www.spatxos.cn/tags/dnspod/"/>
     
-    <category term="域名解析记录" scheme="http://spatxos.cn/tags/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95/"/>
+    <category term="域名解析记录" scheme="https://www.spatxos.cn/tags/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>windows版本rabbitmq安装及日志level设置</title>
-    <link href="http://spatxos.cn/2021/11/18/cnblogs/15571172/"/>
-    <id>http://spatxos.cn/2021/11/18/cnblogs/15571172/</id>
+    <link href="https://www.spatxos.cn/2021/11/18/cnblogs/15571172/"/>
+    <id>https://www.spatxos.cn/2021/11/18/cnblogs/15571172/</id>
     <published>2021-11-18T02:40:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.243Z</updated>
     
     
       
@@ -447,16 +447,16 @@
     
     
     
-    <category term="rabbitmq" scheme="http://spatxos.cn/tags/rabbitmq/"/>
+    <category term="rabbitmq" scheme="https://www.spatxos.cn/tags/rabbitmq/"/>
     
   </entry>
   
   <entry>
     <title>记vs2019  The view &#39;xxx&#39; was not found.</title>
-    <link href="http://spatxos.cn/2021/02/03/cnblogs/14366411/"/>
-    <id>http://spatxos.cn/2021/02/03/cnblogs/14366411/</id>
+    <link href="https://www.spatxos.cn/2021/02/03/cnblogs/14366411/"/>
+    <id>https://www.spatxos.cn/2021/02/03/cnblogs/14366411/</id>
     <published>2021-02-03T05:05:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.243Z</updated>
     
     
       
@@ -475,10 +475,10 @@
   
   <entry>
     <title>centos 8及以上安装mysql 8.0</title>
-    <link href="http://spatxos.cn/2020/09/01/cnblogs/13596927/"/>
-    <id>http://spatxos.cn/2020/09/01/cnblogs/13596927/</id>
+    <link href="https://www.spatxos.cn/2020/09/01/cnblogs/13596927/"/>
+    <id>https://www.spatxos.cn/2020/09/01/cnblogs/13596927/</id>
     <published>2020-09-01T08:30:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.243Z</updated>
     
     
       
@@ -495,18 +495,18 @@
     
     
     
-    <category term="linux" scheme="http://spatxos.cn/tags/linux/"/>
+    <category term="linux" scheme="https://www.spatxos.cn/tags/linux/"/>
     
-    <category term="mysql" scheme="http://spatxos.cn/tags/mysql/"/>
+    <category term="mysql" scheme="https://www.spatxos.cn/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>.net core3.1 abp动态菜单和动态权限（动态菜单实现和动态权限添加）  （三）</title>
-    <link href="http://spatxos.cn/2020/06/13/cnblogs/13096427/"/>
-    <id>http://spatxos.cn/2020/06/13/cnblogs/13096427/</id>
+    <link href="https://www.spatxos.cn/2020/06/13/cnblogs/13096427/"/>
+    <id>https://www.spatxos.cn/2020/06/13/cnblogs/13096427/</id>
     <published>2020-06-13T10:16:00.000Z</published>
-    <updated>2022-11-17T06:15:23.363Z</updated>
+    <updated>2023-08-15T06:40:17.243Z</updated>
     
     
       
@@ -522,9 +522,9 @@
     
     
     
-    <category term="netcore" scheme="http://spatxos.cn/tags/netcore/"/>
+    <category term="netcore" scheme="https://www.spatxos.cn/tags/netcore/"/>
     
-    <category term="abp" scheme="http://spatxos.cn/tags/abp/"/>
+    <category term="abp" scheme="https://www.spatxos.cn/tags/abp/"/>
     
   </entry>
   
